@@ -1,0 +1,117 @@
+Beta Test v1.9.3 - 19/4/14 (Current Version)
+Added DLC editor (C-Gear/Pokedex Skins and Musical Data injection/extraction)
+Fixed PikaeditLib problems with multiple connections to Veekun's database, making multiple Pikaedit versions be used at the same time (Other Pikaedit versions need to be updated as well)
+
+Beta Test v1.9.2 - 17/4/14
+Fixed Kyurem White and Black forms were switched
+Fixed Pokemon with alternate forms didn't have stats calculation when saved
+Fixed legal abilities had a problem with alternate forms
+Added Battle Box and Fused slot to the save file editor
+
+Beta Test v1.9.1 - 17/4/14
+Fixed movesets query had a problem that didn't filtered pre evolution moves and egg moves by Gen
+
+Beta Test v1.9 - 14/4/14
+Updated PikaeditLib with Veekun open source database support
+Updated PikaeditLib.dll is now merged into the exe file
+Added Legal/Hack mode editor
+Added in Legal mode, movesets will be updated depending on the Pokemon data and now loads moves that can be learned depending on level
+Added Moveset Analysis (will display if the move is legal or not)
+Added Max PP and Random IV tools
+Added Ability Index will set the legal ability corresponding to the selected index (even when using Hack mode editor)
+Fixed PP will be updated after changing moves and increasing PP Up's
+Fixed PP Up limit wasn't set
+Updated Settings saving to save editor mode and has been modified to allow new settings
+
+Beta Test v1.8.7 - 11/4/14
+Updated PikaeditLib due to plugin system implementation in Gen 4 and XY versions
+Added nature stat increase and decrease in the Stats tab with orange color for boosted stat and blue for lowered stat
+Fixed Pokeball list bug
+
+Beta Test v1.8.6 - 3/4/14
+Due to a missing method in PikaeditLib, plugins need to be updated again...
+Updated Plugin Updater will be launched when updating Pikaedit
+
+Beta Test v1.8.5 - 2/4/14
+Updated PikaeditLib with Gen 4 and XY classes
+Added Plugin Updater
+Updated Plugin System with new stuff that PikaeditLib update gives...
+
+Beta Test v1.8.4 - 30/3/14
+Changed instead of loading using UnsafeLoad changed to Load using dll data (with this there is no NotSupportedException and dll files can be edited)
+Added Remove plugin option
+Updated PikaeditLib with some changes due to documentation (No impact on current plugins)
+Updated French language interface
+
+Beta Test v1.8.3 - 26/3/14
+Fixed Pikaedit needed plugins to be unblocked if downloaded from the web
+
+Beta Test v1.8.2 - 25/3/14
+Fixed Wonder Card editor didn't loaded Wonder Cards if Pikaedit was in another language
+Updated Pikaedit will copy added plugins into the new Plugin folder and will load them on startup
+
+Beta Test v1.8.0.1 - 24/3/14
+Updated Plugin system to allow Requirements settings and display plugin info
+
+Beta Test v1.8 - 23/3/14
+Added Plugins system
+
+Beta Test v1.7 - 22/3/14
+Added Wonder Card editor
+Added Mystery Gift editor for save files
+Fixed trainer name wasn't saved correctly
+Fixed pokemon that have some data remaining wasn't saved correctly for save files, instead data is zeroed and encrypted
+Updated Pokerus editor with split between strain and days remaining
+
+Beta Test v1.6.1 - 15/3/14
+Updated Pokemon sprites with XY sprites
+
+Beta Test v1.6 - 15/3/14
+Added Day Care Pokemon
+Added Save File Data log
+Added Trainer Info Editor
+Fixed an encryption bug for party pokemon due to a casting error
+Updated French interface with more translations and PID generator translated
+
+Beta Test v1.5
+Added Drag and Drop system to move save file pkm slots
+Added Select slot to set a pokemon in multiple slots
+Added Clear save file slot
+Added Box name editor
+
+Beta Test v1.4.2
+Added Load/Save box as sfb file, contains all pkm data from a box as well as the box name and wallpaper
+Added Korean language data pack with items (missing locations to be complete)
+
+Beta Test v1.4.1
+Solved loading bug that required deleting the "en" folder
+Added language interface updater
+
+Beta Test v1.4
+Added new PID Generator with generation method selection
+Added German interface
+Added closing Pikaedit saves the language selected and translates data before loading, and if interface is available it loads it (doesn't affect initialization performance)
+Fixed Shiny box wasn't updated when PID was changed
+Fixed Fateful encounter flag wasn't loading
+
+Beta Test v1.3.1
+Added German data translation
+
+Beta Test v1.3
+Added Language Interface change
+Added PKM Languages and Versions translations will be done like species and other stuff
+Added French interface support
+Added Korean data language pack (still missing locations, items, versions and languages)
+Added Interface downloader with the French interface download... due to Interface translations require .dll to work
+Fixed Editing pkm language didn't changed it when saving
+
+Beta Test v1.2.1
+Added DSV support
+Fixed a encryption bug that didn't encrypted pkm party block
+
+Beta Test v1.2
+Added Save File Editor Pkm editor
+Added Load and Save sav file for both BW and BW2 versions
+
+Beta Test v1.1
+Added updated GTS System

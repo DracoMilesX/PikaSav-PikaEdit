@@ -1,0 +1,1150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="statsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="statsLabel.Text" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="ivLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
+  </data>
+  <data name="ivLabel.Text" xml:space="preserve">
+    <value>DV</value>
+  </data>
+  <data name="speedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="speedLabel.Text" xml:space="preserve">
+    <value>Geschwindigkeit</value>
+  </data>
+  <data name="spdefenseLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="spdefenseLabel.Text" xml:space="preserve">
+    <value>Sp.-Verteidigung</value>
+  </data>
+  <data name="spattackLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="spattackLabel.Text" xml:space="preserve">
+    <value>Sp.-Angriff</value>
+  </data>
+  <data name="hiddenPowerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="hiddenPowerLabel.Text" xml:space="preserve">
+    <value>Versteckte Fähigkeit Kampf</value>
+  </data>
+  <data name="Button16.Text" xml:space="preserve">
+    <value>Max AP</value>
+  </data>
+  <data name="ppupLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="ppupLabel.Text" xml:space="preserve">
+    <value>AP Plus</value>
+  </data>
+  <data name="defenseLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="defenseLabel.Text" xml:space="preserve">
+    <value>Verteidigung</value>
+  </data>
+  <data name="nicktbBox.Text" xml:space="preserve">
+    <value>Bisasam</value>
+  </data>
+  <data name="nickBox.Text" xml:space="preserve">
+    <value>Bisasam</value>
+  </data>
+  <data name="isNickBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="isNickBox.Text" xml:space="preserve">
+    <value>Gesetzt</value>
+  </data>
+  <data name="pokerusLabel.Text" xml:space="preserve">
+    <value>Pokérus</value>
+  </data>
+  <data name="pokerusBox.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="formLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 249</value>
+  </data>
+  <data name="shinyBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="shinyBox.Text" xml:space="preserve">
+    <value>Schillernd</value>
+  </data>
+  <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>Geschlecht</value>
+  </data>
+  <data name="languageBox.Text" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="speciesBox.Text" xml:space="preserve">
+    <value>Bisasam</value>
+  </data>
+  <data name="versionBox.Text" xml:space="preserve">
+    <value>Schwarz 2</value>
+  </data>
+  <data name="itemBox.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="natureLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 140</value>
+  </data>
+  <data name="natureLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="natureLabel.Text" xml:space="preserve">
+    <value>Wesen</value>
+  </data>
+  <data name="CheckBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="CheckBox5.Text" xml:space="preserve">
+    <value>Versteckte Fähigkeit</value>
+  </data>
+  <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 223</value>
+  </data>
+  <data name="fatefulBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 17</value>
+  </data>
+  <data name="fatefulBox.Text" xml:space="preserve">
+    <value>Schicksalhafte Begegnung</value>
+  </data>
+  <data name="genderlessButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="genderlessButton.Text" xml:space="preserve">
+    <value>Geschlechtslos</value>
+  </data>
+  <data name="femaleButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="femaleButton.Text" xml:space="preserve">
+    <value>Weiblich</value>
+  </data>
+  <data name="maleButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="maleButton.Text" xml:space="preserve">
+    <value>Männlich</value>
+  </data>
+  <data name="isEggBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 17</value>
+  </data>
+  <data name="isEggBox.Text" xml:space="preserve">
+    <value>Ei</value>
+  </data>
+  <data name="languageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 194</value>
+  </data>
+  <data name="languageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="languageLabel.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="abilityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 115</value>
+  </data>
+  <data name="abilityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="abilityLabel.Text" xml:space="preserve">
+    <value>Fähigkeit</value>
+  </data>
+  <data name="happinessLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-4, 166</value>
+  </data>
+  <data name="happinessLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="happinessLabel.Text" xml:space="preserve">
+    <value>Zufriedenheit</value>
+  </data>
+  <data name="ExpLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="ExpLabel.Text" xml:space="preserve">
+    <value>Erf</value>
+  </data>
+  <data name="PIDLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="SpeciesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 37</value>
+  </data>
+  <data name="SpeciesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="SpeciesLabel.Text" xml:space="preserve">
+    <value>Rasse</value>
+  </data>
+  <data name="nickLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-4, 62</value>
+  </data>
+  <data name="nickLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="nickLabel.Text" xml:space="preserve">
+    <value>Spitzname</value>
+  </data>
+  <data name="checksumLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="checksumLabel.Text" xml:space="preserve">
+    <value>Prüfsumme</value>
+  </data>
+  <data name="hiddenPowerBox.Items" xml:space="preserve">
+    <value>Boden</value>
+  </data>
+  <data name="hiddenPowerBox.Items1" xml:space="preserve">
+    <value>Drache</value>
+  </data>
+  <data name="hiddenPowerBox.Items2" xml:space="preserve">
+    <value>Eis</value>
+  </data>
+  <data name="hiddenPowerBox.Items3" xml:space="preserve">
+    <value>Elektro</value>
+  </data>
+  <data name="hiddenPowerBox.Items4" xml:space="preserve">
+    <value>Feuer</value>
+  </data>
+  <data name="hiddenPowerBox.Items5" xml:space="preserve">
+    <value>Flug</value>
+  </data>
+  <data name="hiddenPowerBox.Items6" xml:space="preserve">
+    <value>Geist</value>
+  </data>
+  <data name="hiddenPowerBox.Items7" xml:space="preserve">
+    <value>Gestein</value>
+  </data>
+  <data name="hiddenPowerBox.Items8" xml:space="preserve">
+    <value>Gift</value>
+  </data>
+  <data name="hiddenPowerBox.Items9" xml:space="preserve">
+    <value>Käfer</value>
+  </data>
+  <data name="hiddenPowerBox.Items10" xml:space="preserve">
+    <value>Kampf</value>
+  </data>
+  <data name="hiddenPowerBox.Items11" xml:space="preserve">
+    <value>Pflanze</value>
+  </data>
+  <data name="hiddenPowerBox.Items12" xml:space="preserve">
+    <value>Psycho</value>
+  </data>
+  <data name="hiddenPowerBox.Items13" xml:space="preserve">
+    <value>Stahl</value>
+  </data>
+  <data name="hiddenPowerBox.Items14" xml:space="preserve">
+    <value>Unlicht</value>
+  </data>
+  <data name="hiddenPowerBox.Items15" xml:space="preserve">
+    <value>Wasser</value>
+  </data>
+  <data name="resetevButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 161</value>
+  </data>
+  <data name="resetevButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 22</value>
+  </data>
+  <data name="resetevButton.Text" xml:space="preserve">
+    <value>Alle EV 0</value>
+  </data>
+  <data name="totalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="totalLabel.Text" xml:space="preserve">
+    <value>Gesamt DV 0/EV 0</value>
+  </data>
+  <data name="allivsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 135</value>
+  </data>
+  <data name="allivsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 22</value>
+  </data>
+  <data name="allivsButton.Text" xml:space="preserve">
+    <value>Alle DV 31</value>
+  </data>
+  <data name="randomivButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 108</value>
+  </data>
+  <data name="randomivButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 22</value>
+  </data>
+  <data name="randomivButton.Text" xml:space="preserve">
+    <value>Zufällige DV</value>
+  </data>
+  <data name="statusBox.Items" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="statusBox.Items1" xml:space="preserve">
+    <value>Vergiftet</value>
+  </data>
+  <data name="statusBox.Items2" xml:space="preserve">
+    <value>Brennend</value>
+  </data>
+  <data name="statusBox.Items3" xml:space="preserve">
+    <value>Eingefroren</value>
+  </data>
+  <data name="statusBox.Items4" xml:space="preserve">
+    <value>Paralisiert</value>
+  </data>
+  <data name="statusBox.Items5" xml:space="preserve">
+    <value>Stark vergiftet</value>
+  </data>
+  <data name="statusBox.Items6" xml:space="preserve">
+    <value>Seit 1 Zug schlafend</value>
+  </data>
+  <data name="statusBox.Items7" xml:space="preserve">
+    <value>Seit 2 Zügen schlafend</value>
+  </data>
+  <data name="statusBox.Items8" xml:space="preserve">
+    <value>Seit 3 Zügen schlafend</value>
+  </data>
+  <data name="statusBox.Items9" xml:space="preserve">
+    <value>Seit 4 Zügen schlafend</value>
+  </data>
+  <data name="statusBox.Items10" xml:space="preserve">
+    <value>Seit 5 Zügen schlafend</value>
+  </data>
+  <data name="statusBox.Items11" xml:space="preserve">
+    <value>Seit 6 Zügen schlafend</value>
+  </data>
+  <data name="statusBox.Items12" xml:space="preserve">
+    <value>Seit 7 Zügen schlafend</value>
+  </data>
+  <data name="statusBox.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="attackLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="attackLabel.Text" xml:space="preserve">
+    <value>Angriff</value>
+  </data>
+  <data name="hpLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 13</value>
+  </data>
+  <data name="hpLabel.Text" xml:space="preserve">
+    <value>KP</value>
+  </data>
+  <data name="TabPage2.Text" xml:space="preserve">
+    <value>Werte</value>
+  </data>
+  <data name="currentppLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="currentppLabel.Text" xml:space="preserve">
+    <value>Aktuelle AP</value>
+  </data>
+  <data name="movesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="movesLabel.Text" xml:space="preserve">
+    <value>Angriffe</value>
+  </data>
+  <data name="TabPage3.Text" xml:space="preserve">
+    <value>Angriffe</value>
+  </data>
+  <data name="circleMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 17</value>
+  </data>
+  <data name="circleMark.Text" xml:space="preserve">
+    <value>Kreis</value>
+  </data>
+  <data name="TriangleMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="TriangleMark.Text" xml:space="preserve">
+    <value>Dreieck</value>
+  </data>
+  <data name="DiamondMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 17</value>
+  </data>
+  <data name="DiamondMark.Text" xml:space="preserve">
+    <value>Diamant</value>
+  </data>
+  <data name="SquareMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="SquareMark.Text" xml:space="preserve">
+    <value>Quadrat</value>
+  </data>
+  <data name="StarMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
+  </data>
+  <data name="StarMark.Text" xml:space="preserve">
+    <value>Stern</value>
+  </data>
+  <data name="HeartMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="HeartMark.Text" xml:space="preserve">
+    <value>Herz</value>
+  </data>
+  <data name="markingsGroup.Text" xml:space="preserve">
+    <value>Markierungen</value>
+  </data>
+  <data name="Button22.Text" xml:space="preserve">
+    <value>Meine Daten</value>
+  </data>
+  <data name="hatchedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
+  </data>
+  <data name="hatchedBox.Text" xml:space="preserve">
+    <value>Aus Ei geschlüpft</value>
+  </data>
+  <data name="locationhatchedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="locationhatchedLabel.Text" xml:space="preserve">
+    <value>Schlüpf-Ort</value>
+  </data>
+  <data name="locationmetLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 13</value>
+  </data>
+  <data name="locationmetLabel.Text" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="femaleOTButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="femaleOTButton.Text" xml:space="preserve">
+    <value>Weiblich</value>
+  </data>
+  <data name="maleOTButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="maleOTButton.Text" xml:space="preserve">
+    <value>Männlich</value>
+  </data>
+  <data name="otgenderLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="otgenderLabel.Text" xml:space="preserve">
+    <value>OT Geschlecht</value>
+  </data>
+  <data name="levelmetLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="levelmetLabel.Text" xml:space="preserve">
+    <value>mit Level</value>
+  </data>
+  <data name="pokeballLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="pokeballLabel.Text" xml:space="preserve">
+    <value>Pokéball</value>
+  </data>
+  <data name="datemetLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="datemetLabel.Text" xml:space="preserve">
+    <value>Datum (dd.mm.jjjj)</value>
+  </data>
+  <data name="dateEggLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 13</value>
+  </data>
+  <data name="dateEggLabel.Text" xml:space="preserve">
+    <value>Datum der Ei-Übergabe (dd.mm.jjjj)</value>
+  </data>
+  <data name="TabPage4.Text" xml:space="preserve">
+    <value>Daten</value>
+  </data>
+  <data name="ribbonListBox.Items" xml:space="preserve">
+    <value>Band des Champs von Sinnoh</value>
+  </data>
+  <data name="ribbonListBox.Items1" xml:space="preserve">
+    <value>Band der Fähigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items2" xml:space="preserve">
+    <value>Großes Band der Fähigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items3" xml:space="preserve">
+    <value>Doppel-Band der Fähigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items4" xml:space="preserve">
+    <value>Multi-Band der Fähigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items5" xml:space="preserve">
+    <value>Paar-Band der Fähigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items6" xml:space="preserve">
+    <value>Welt-Band der Fähigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items7" xml:space="preserve">
+    <value>Band der Wachsamkeit</value>
+  </data>
+  <data name="ribbonListBox.Items8" xml:space="preserve">
+    <value>Band des Schocks</value>
+  </data>
+  <data name="ribbonListBox.Items9" xml:space="preserve">
+    <value>Band des Niederschlags</value>
+  </data>
+  <data name="ribbonListBox.Items10" xml:space="preserve">
+    <value>Band der Sorglosigkeit</value>
+  </data>
+  <data name="ribbonListBox.Items11" xml:space="preserve">
+    <value>Band der Entspannung</value>
+  </data>
+  <data name="ribbonListBox.Items12" xml:space="preserve">
+    <value>Band des Schlafens</value>
+  </data>
+  <data name="ribbonListBox.Items13" xml:space="preserve">
+    <value>Band des Lächelns</value>
+  </data>
+  <data name="ribbonListBox.Items14" xml:space="preserve">
+    <value>Hinreißendes Band</value>
+  </data>
+  <data name="ribbonListBox.Items15" xml:space="preserve">
+    <value>Königliches Band</value>
+  </data>
+  <data name="ribbonListBox.Items16" xml:space="preserve">
+    <value>Hinreißendes Königliches Band</value>
+  </data>
+  <data name="ribbonListBox.Items17" xml:space="preserve">
+    <value>Fußabdruck-Band</value>
+  </data>
+  <data name="ribbonListBox.Items18" xml:space="preserve">
+    <value>Band des Rekords</value>
+  </data>
+  <data name="ribbonListBox.Items19" xml:space="preserve">
+    <value>Rotes Band</value>
+  </data>
+  <data name="ribbonListBox.Items20" xml:space="preserve">
+    <value>Grünes Band</value>
+  </data>
+  <data name="ribbonListBox.Items21" xml:space="preserve">
+    <value>Blaues Band</value>
+  </data>
+  <data name="ribbonListBox.Items24" xml:space="preserve">
+    <value>Klassisches Band</value>
+  </data>
+  <data name="ribbonListBox.Items25" xml:space="preserve">
+    <value>Premierband</value>
+  </data>
+  <data name="ribbonListBox.Items26" xml:space="preserve">
+    <value>Band der Coolness</value>
+  </data>
+  <data name="ribbonListBox.Items27" xml:space="preserve">
+    <value>Band der Coolness Mega</value>
+  </data>
+  <data name="ribbonListBox.Items28" xml:space="preserve">
+    <value>Band der Coolness Ultra</value>
+  </data>
+  <data name="ribbonListBox.Items29" xml:space="preserve">
+    <value>Band der Coolness Master</value>
+  </data>
+  <data name="ribbonListBox.Items30" xml:space="preserve">
+    <value>Band der Schönheit</value>
+  </data>
+  <data name="ribbonListBox.Items31" xml:space="preserve">
+    <value>Band der Schönheit Mega</value>
+  </data>
+  <data name="ribbonListBox.Items32" xml:space="preserve">
+    <value>Band der Schönheit Ultra</value>
+  </data>
+  <data name="ribbonListBox.Items33" xml:space="preserve">
+    <value>Band der Schönheit Master</value>
+  </data>
+  <data name="ribbonListBox.Items34" xml:space="preserve">
+    <value>Band der Anmut</value>
+  </data>
+  <data name="ribbonListBox.Items35" xml:space="preserve">
+    <value>Band der Anmut Mega</value>
+  </data>
+  <data name="ribbonListBox.Items36" xml:space="preserve">
+    <value>Band der Anmut Ultra</value>
+  </data>
+  <data name="ribbonListBox.Items37" xml:space="preserve">
+    <value>Band der Anmut Master</value>
+  </data>
+  <data name="ribbonListBox.Items38" xml:space="preserve">
+    <value>Band der Klugheit</value>
+  </data>
+  <data name="ribbonListBox.Items39" xml:space="preserve">
+    <value>Band der Klugheit Mega</value>
+  </data>
+  <data name="ribbonListBox.Items40" xml:space="preserve">
+    <value>Band der Klugheit Ultra</value>
+  </data>
+  <data name="ribbonListBox.Items41" xml:space="preserve">
+    <value>Band der Klugheit Master</value>
+  </data>
+  <data name="ribbonListBox.Items42" xml:space="preserve">
+    <value>Band der Stärke</value>
+  </data>
+  <data name="ribbonListBox.Items43" xml:space="preserve">
+    <value>Band der Stärke Mega</value>
+  </data>
+  <data name="ribbonListBox.Items44" xml:space="preserve">
+    <value>Band der Stärke Ultra</value>
+  </data>
+  <data name="ribbonListBox.Items45" xml:space="preserve">
+    <value>Band der Stärke Master</value>
+  </data>
+  <data name="ribbonListBox.Items46" xml:space="preserve">
+    <value>Hoenn Band der Coolness</value>
+  </data>
+  <data name="ribbonListBox.Items47" xml:space="preserve">
+    <value>Hoenn Band der Coolness Super</value>
+  </data>
+  <data name="ribbonListBox.Items48" xml:space="preserve">
+    <value>Hoenn Band der Coolness Hyper</value>
+  </data>
+  <data name="ribbonListBox.Items49" xml:space="preserve">
+    <value>Hoenn Band der Coolness Master</value>
+  </data>
+  <data name="ribbonListBox.Items50" xml:space="preserve">
+    <value>Hoenn Band der Schönheit</value>
+  </data>
+  <data name="ribbonListBox.Items51" xml:space="preserve">
+    <value>Hoenn Band der Schönheit Super</value>
+  </data>
+  <data name="ribbonListBox.Items52" xml:space="preserve">
+    <value>Hoenn Band der Schönheit Hyper</value>
+  </data>
+  <data name="ribbonListBox.Items53" xml:space="preserve">
+    <value>Hoenn Band der Schönheit Master</value>
+  </data>
+  <data name="ribbonListBox.Items54" xml:space="preserve">
+    <value>Hoenn Band der Anmut</value>
+  </data>
+  <data name="ribbonListBox.Items55" xml:space="preserve">
+    <value>Hoenn Band der Anmut Super</value>
+  </data>
+  <data name="ribbonListBox.Items56" xml:space="preserve">
+    <value>Hoenn Band der Anmut Hyper</value>
+  </data>
+  <data name="ribbonListBox.Items57" xml:space="preserve">
+    <value>Hoenn Band der Anmut Master</value>
+  </data>
+  <data name="ribbonListBox.Items58" xml:space="preserve">
+    <value>Hoenn Band der Klugheit</value>
+  </data>
+  <data name="ribbonListBox.Items59" xml:space="preserve">
+    <value>Hoenn Band der Klugheit Super</value>
+  </data>
+  <data name="ribbonListBox.Items60" xml:space="preserve">
+    <value>Hoenn Band der Klugheit Hyper</value>
+  </data>
+  <data name="ribbonListBox.Items61" xml:space="preserve">
+    <value>Hoenn Band der Klugheit Master</value>
+  </data>
+  <data name="ribbonListBox.Items62" xml:space="preserve">
+    <value>Hoenn Band der Stärke</value>
+  </data>
+  <data name="ribbonListBox.Items63" xml:space="preserve">
+    <value>Hoenn Band der Stärke Super</value>
+  </data>
+  <data name="ribbonListBox.Items64" xml:space="preserve">
+    <value>Hoenn Band der Stärke Hyper</value>
+  </data>
+  <data name="ribbonListBox.Items65" xml:space="preserve">
+    <value>Hoenn Band der Stärke Master</value>
+  </data>
+  <data name="ribbonListBox.Items66" xml:space="preserve">
+    <value>Band des Champs</value>
+  </data>
+  <data name="ribbonListBox.Items67" xml:space="preserve">
+    <value>Band des Gewinners</value>
+  </data>
+  <data name="ribbonListBox.Items68" xml:space="preserve">
+    <value>Band des Sieges</value>
+  </data>
+  <data name="ribbonListBox.Items69" xml:space="preserve">
+    <value>Band des Künstlers</value>
+  </data>
+  <data name="ribbonListBox.Items70" xml:space="preserve">
+    <value>Fleiß-Band</value>
+  </data>
+  <data name="TabPage5.Text" xml:space="preserve">
+    <value>Bänder/Andere</value>
+  </data>
+  <data name="gtsFolderSet.Text" xml:space="preserve">
+    <value>Wählen</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Empfangs-Verzeichnis</value>
+  </data>
+  <data name="startGTS.Text" xml:space="preserve">
+    <value>GTS-System starten</value>
+  </data>
+  <data name="publicButton.Text" xml:space="preserve">
+    <value>Öffentliche IP ermitteln</value>
+  </data>
+  <data name="localButton.Text" xml:space="preserve">
+    <value>Lokale IP ermitteln</value>
+  </data>
+  <data name="randomDistribution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="randomDistribution.Text" xml:space="preserve">
+    <value>Zufällig</value>
+  </data>
+  <data name="orderDistribution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 17</value>
+  </data>
+  <data name="orderDistribution.Text" xml:space="preserve">
+    <value>Sortiert</value>
+  </data>
+  <data name="folderDistribution.Text" xml:space="preserve">
+    <value>Verteilart</value>
+  </data>
+  <data name="gtsMode.Items" xml:space="preserve">
+    <value>Senden und Empfangen</value>
+  </data>
+  <data name="gtsMode.Items1" xml:space="preserve">
+    <value>Senden</value>
+  </data>
+  <data name="gtsMode.Items2" xml:space="preserve">
+    <value>Empgfangen</value>
+  </data>
+  <data name="gtsMode.Text" xml:space="preserve">
+    <value>Senden und Empfangen</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Modus</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Verteil-Einstellungen</value>
+  </data>
+  <data name="gtsSetFolder.Text" xml:space="preserve">
+    <value>Wählen</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Sende-Verzeichnis</value>
+  </data>
+  <data name="gtsFileSet.Text" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="distributeEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 17</value>
+  </data>
+  <data name="distributeEditor.Text" xml:space="preserve">
+    <value>Verteile das im Editor geöffnete Pokémon</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Zu verteilende Pokémon</value>
+  </data>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>GTS-Daten</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="loadMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="loadMenu.Text" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="saveMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="saveSavMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="saveSavMenu.Text" xml:space="preserve">
+    <value>Als sav speichern</value>
+  </data>
+  <data name="compareMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="compareMenu.Text" xml:space="preserve">
+    <value>Pkm-Dateien vergleichen</value>
+  </data>
+  <data name="resetMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="resetMenu.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 24</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="englishLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="frenchLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="frenchLanguage.Text" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="germanLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="koreanLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="LanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="OptionsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 24</value>
+  </data>
+  <data name="OptionsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="webPageMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="webPageMenu.Text" xml:space="preserve">
+    <value>Updates, Infos und Feedback</value>
+  </data>
+  <data name="facebookMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="facebookMenu.Text" xml:space="preserve">
+    <value>PikaEdit auf Facebook</value>
+  </data>
+  <data name="changelogMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="changelogMenu.Text" xml:space="preserve">
+    <value>Änderungen</value>
+  </data>
+  <data name="aboutMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 24</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="loadDialog.Filter" xml:space="preserve">
+    <value>Pokemon supported files (*.pkm;*.sav)|*.pkm;*.sav</value>
+  </data>
+  <data name="saveFileEditor.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="saveSavDialog.Filter" xml:space="preserve">
+    <value>Pokemon save file (*.sav)|*.sav</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAMDQAAAEAIADIKAAAFgAAACgAAAAwAAAAaAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAsLi7/MS4w/y4vLf8wLi7/LC4v/y4uLv8uLy3/LC4u/y4tL/8wLi7/LC4u/y4uLv8sLy3/LjAw/1BR
+        T/+Rk5P/l5eX/6Wlpf+rrbf/rbCu/7Wwsv+sr7T/tbCy/62wrv+tr6//q7Cu/7awsf+1rrP/s6+0/7Ww
+        sf+1sLH/rbCu/7avsv+tsK7/qrGu/7Wwsv/m6+r///////7+/v///////////////v////7///////z+
+        /v////7///7//////v8uLy3/LS0t/y4uLv8sLi7/Li8t/ywuLv8vMC7/MC0v/y4vLf8sLi7/Li4u/zAu
+        Lv8wLi7/MTEx/0ZFR/97eHr/fX19/4mLi/+opaf/u7+6/8PJyP+qpab/b1xU/1tLRP9qVE//Y0RB/4F8
+        e/+8v73/ur+9/66utP+tsaz/tq+y/6uwrv+2r7L/tq+y/6+vr//p5+f/+vj4//z9+//9/P7//v7+//3/
+        ///////////////////9/////f////////8wLi7/Ly8v/y0vMP8wMDD/LjAw/zAwMP8uMDH/LjEv/y4w
+        MP8uMDD/LjAw/ywwMf8uMDD/SkxN/1lcWv9xcXH/dHZ2/3V3eP+srrb/vL+9/7exsv95en7/GAwK/wkA
+        Bf8FBhT/AAUD/00+O/+opaf/wbu8/7q4uP+1sLH/s7Gx/6yvs/+tsK7/rLGv/6uzs//Y2Nj/4+Ti/+fn
+        5//s7ev/8vHz//f5+f/9//////////////////////////////8sLi7/Li4u/y4wMP8X/vz/Fv7//xX9
+        /v8V////Fv7//xX9//8V////FP7+/xT9//868O//Pevr/6ukp/+rsK7/qKWn/62wtP/KxMX/va+j/2ZT
+        Tv8QLjn/AHmg/wCGwP8Bf6//AYbA/wFaf/85Nzf/mI+M/8nGwv+9wL7/qKSp/6mkpv+zsLL/trCx/8nE
+        xf/HxcX/ysbF/8jEw//DyMf/wsjH/z7x8P81+vj/G//+/xv///////7///7///////8vLy//LC4u/y4w
+        MP9s/v7/af///2f///9r////Zf/+/2b//v9p////e/Lx/3nx8f976uz/trGw/6+wrv+tr7D/v729/8vG
+        xf+zvb3/eHt//ycgJ/8LGyf/AW6i/wSJu/8BgK3/BIm7/wBFZv8RDA3/QS4r/5iPjP/Awcv/w8jH/8PJ
+        yP/Fx8f/q7Cx/5GQlP+Be3z/h3x4/4Z8df97cm//hXx4/3Pd3v9v9vT/bfX0/2b////+//3//f/////+
+        /v8tLiz/MS8v/y8vL/94//3/d//9/3j///95////d//+/37+/f97/v//hOrl/62vr/+tr6//t7C1/7K4
+        s/+1r7T/wby+/767vf9siZL/BVF7/wM/ev8AKkv/AhYb/wALE/8AEyD/CCEj/wALD/8HAAP/BgED/z8u
+        K/+soJz/w8jH/8K7vv/KxcT/oJyb/x4rKf8XDAj/FAoK/xcLC/8aAwj/GwML/3a3uP9t////a//9/3H+
+        ///7/////////////v8uLi7/Li4u/y4wMP96/v7/e////3f+//97////fP///3n+//+F6uj/iuns/6uw
+        rv+0r7H/uLKz/7Oxsf/Eycj/raGb/2dVTv8XQlH/AGei/wCBwv8AdqX/AERs/wExTf8APlz/Azdb/wBG
+        Y/8IU3r/AEJp/wA5Wf9CQED/Y0RB/1lMRP9aT0v/Py0s/wcAA/8CCxT/AjJO/wA+XP8AQ2r/AEhi/yld
+        bf9oqar/ft7e/3P//P////////////////8sLi7/Li4u/y4wMf8i//3/Jf///yD///8j//7/If///y78
+        /f8i/f//Rujq/7ews/+rsK7/tbW1/8S+v//CvL3/fnJw/xcLC/8AMU//ApHO/wOw+P8Bru3/ALDp/wCy
+        6f8Aser/ALby/wCw7P8CtfL/Acn+/wCXwP8FKz3/BQYU/wMCC/8AAwv/AAsT/wAVIP8GVnX/AJLO/wB9
+        t/8AfrX/An21/wErSP8cBQn/RMG//yP+//////////7+//z+/v8uLi7/MC4u/y4wMf8m/v3/J/7//yP/
+        /v8l//7/I/7//yX///8h////RPDu/0H09f9F8PL/QPXx/8G7wP9YT0v/FSIg/wFDbP8BgcL/AZ3i/wCu
+        +/8At/P/AtP//wDU/P8A1f7/AtP9/wDV+v8A0/z/AN39/wDP7/8Bl7//AHqS/wR3ov8CbqT/AG2h/wV5
+        ov8Dod3/AJ3h/wBEaf8BIjH/Ai08/wEKE/8ePzj/S9HR/yb////+//3///////3//v8uLi7/Li4u/y4w
+        MP+A/v//gP///3/+//9//v//gP///33+//98////fv///3z+/f99//7/iero/3Bzcf8dBAj/AB45/wyN
+        xP8Bvv3/ArHp/wKx6v8AwOj/ANPy/w3X9P8N2fL/AM3w/wLQ7P8D0/H/A9Dv/w/Y8/8A5f//AOf9/wHK
+        +/8Ayf7/Acn+/wLS/P8Dyf3/ALTi/wBgcP8BFRr/AAML/xslJf9wurr/cf///3/9///////////+//3/
+        //8rLS3/Li4u/y0wLv+C//3/gf/+/4P+//+B////gf///4P//v+A////gP/+/37//v+D//7/frS1/xIM
+        Df8BJD7/AGel/wSd3P8Asuv/ALXz/x3E7/8M2fT/Acv0/wDS7f8S2PL/ANHs/wDT6/8Bz/L/C9jz/wLM
+        9f8A0e//ANPt/wDR8P8DzPf/ANLw/wDR8/8Czu3/AtDz/wDd//8BfIr/ABcZ/2WNi/92/v3/c//9/4P/
+        ///9//////7////+//8wLi7/LS0t/zIwL/9+/f7/e////33///99////e////3v///96//3/ef///3j+
+        /v+F0dD/PTMs/wYBAv8FUXv/AJ7a/wKv+f8AtfP/F8Xv/wLR8f8N1/T/ANPu/wHS7P8A0fP/AMv4/wDX
+        9P8H4Pr/ANf0/wDZ8v8A0PT/Ddjz/wHS7P8L2PT/ANPt/wDR8f8A0+3/ANLr/wDt/v8ByN7/Aomf/z6W
+        p/9/5+z/bv7//3v+//////7////+//3//v8sLi7/Li0v/y8uMP81/P//Nf/+/zD//v8y/v//Mv3//y//
+        //8v////L/3+/zD+//8mSkr/AAQD/wEEAv8AbZn/AbD6/wCu7f8BsuX/AMr1/wXS8v8A0ez/ANHz/wPR
+        7f8Ay/b/ANDw/wDF5f8Att7/DbPa/wDA7P8Syu7/AtLw/wTR8f8A0fH/AM7y/wDL9v8Bzu3/A9Ht/wDS
+        7P8A5v7/Ae39/wSJu/8+p8L/Hf7//y/////////////+//3///8wLi7/Li4u/ywxMP83/v//Nv3//zT+
+        //83/v//NP79/zT+//8y/v//Mf/+/wwoM/8Abpj/AD9c/wELEv8Ab5f/AK/6/wCc3f8Bp87/ANPu/wLY
+        8/8A0+3/AM/v/wDO7P8B0+v/Au3//wK10P8JX5P/AENo/wdilf8Aodv/AMn+/wDS8P8A0uz/AdTv/wDS
+        7P8AzvH/As7t/wDN8P8C3vz/AOH+/wiUuP85qb//IP///zD+/////////f7//////v8uLi7/MC4t/ywx
+        MP85/vz/Ov7//zr///87/P//N//+/zn+//82/f//QJKX/wtggP8IYZT/BC47/wEKFP8JYpT/AJzd/wOB
+        wv8Gn9L/ANHz/wDZ8/8Cz+7/AMn0/xDZ9P8A0ez/AKbP/wKKpv8Ad6T/BG2Z/wBoof8Aksv/ALHq/wDN
+        8P8M1/L/ANTs/wPQ7/8Cze7/AdDw/wDi/f8B0uz/AZ3B/0PA1f8k////I/39/zL+//////7///7////+
+        //8uLi7/Li4u/zAwMP+D/v//hf///4D//f+D/v//g////4P//v8jODn/Al+A/wB9t/8NLjf/AAsR/wkA
+        A/8AW37/AYbA/wGQzf8Mstn/Ac3w/wHa9P8D0uz/ANPy/wDe/P8Bt9v/CmCU/wR3ov8AxuP/A7b0/wCc
+        3f8CgcX/AKfQ/wPS8v8A2PX/Ac7u/wHP6/8A0+z/AdLs/wDh//8Ap9D/BmSP/3f9//9z//7/dv///3b/
+        /v///v/////7//////8wLi7/LS8v/zIwMP+M/v7/jP7+/4v///+L/v//mPDw/zlra/8AXYD/ATdY/z1l
+        av+h//7/jPv9/yAeHv8AWof/AJ/a/wLA6/8BxeX/ANLx/w3X9P8E0+3/AMv2/wS33v8AmMb/ApjA/wC1
+        0v8A0fH/AdT//wCw7P8AgMH/ApbK/wHO7f8L2PT/ANLt/wLM8f8B1/r/AMXi/wWNsf8BfrD/B53F/zux
+        zv+L8vT/f/3+/4P+///8/v7/+/////////8uLi7/Li0v/y4wMP+K/v//iv7//4j+//+I////d6yp/wAs
+        S/8Aksz/AFmI/zdJUP+k/v//m////3ezsv8YTGP/BIm7/wDP8f8E5f7/ANHx/wDL9v8A0e//C9f2/wCY
+        v/8BhcH/AMDs/wLl/v8A0fP/AKPY/wGAxf8Ak8v/DrTZ/wDQ8v8A1/j/Ecvt/wPZ9P8A3vr/AMXl/wJX
+        h/8Abpj/AMze/wGXv/9ap8L/eP/9/4H//////f///f///////v8rMC//MC0v/zAwMP9H/fz/Rv/9/0X/
+        //9G//v/WKmu/wIfOv8Ckcv/AJ/d/wBbfv8uREr/h7O0/7r9/v9VVFj/BkpP/wW60/8A5P//AtLw/wDS
+        7P8B1/L/ANPr/wCWyP8DhcD/AMLs/wHk/f8E0+z/BXil/wphk/8Aps//BNj7/wDS7f8C0fH/AM7u/wHN
+        8P8D2vP/AMXl/wFZh/8Abpz/As3u/wGZwv9ApMD/MP/9/zP9/P/7//////////////8vLS3/Ly8v/y0v
+        L/9N/P//S/7//0v+//9L/v//Sf///2PNzv8VUGT/AJi//wGy6/8LWHn/Q1pc/5iQif89Liv/ADQ7/wC/
+        zv8E1/z/ALfb/wDF5f8A2fP/AdDw/wLA6f8Otdr/AMDr/wHS8v8N1/T/AJi9/xKXvP8Ayd7/AOD//wDR
+        8f8A0u3/A9Ht/wDT7f8A1vn/Acfk/wGXvP8Bp9D/Acr7/wCMwf8/pr//MP7//zr////+//3//f/+///+
+        //8sLy3/Ly0s/zAvMf9Q/v7/Tv7//0z//v9M/f//Tv7//0z//v8LLC//Aoqc/wDV+v8DseX/B2uO/wQr
+        NP8GAQL/Bi07/wCuxP8As+H/Bom7/w+z3f8D1/r/ANTt/wHS7P8B0uz/ANHr/wHN8P8A0uz/BNDv/wDS
+        7f8C0vD/ANHx/wPQ7/8A0u3/FMru/wDR7/8Bzu7/As3u/xbl9f8AzPb/AKHb/wJvo/9T0N//Ov7+/zz+
+        /v////7///7//////P8uLi7/Li0v/y4xL/+R/v//kf///5L//f+N////j/7//1mQl/8Aipz/AMrh/wPZ
+        9P8A0/z/AMv4/wKguP8DIyn/CiEj/wV2qP8Ajtb/AYe9/wC13/8O2fT/AM3t/wLX/P8A0fH/ANHw/wDS
+        8P8CzPX/Adf6/wPX+v8A0vH/Esvt/xLL7f8Ay/j/AtLw/wDS8P8C2PP/ANLs/wLu//8AoLb/E0FZ/37F
+        z/+F//7/gf///4P+///+/v7////////+//8rLiz/LTAu/y0vL/+Z/f//mf/9/5b///+d9vP/N3By/wR+
+        iv8A5P//Ae3+/wDK9f8T5vT/Dtrz/wCguP8DMk7/ABw6/wBtof8Am93/AafO/xLL7f8B1/r/As/v/wHK
+        9f8B0e3/GOb4/znr9v8t4/b/Jdzw/yjd8/8m3PL/D9jy/yfb9P8Bz/P/ANHx/wzY8f8Bzu7/AMv4/wHt
+        /v8Ai5z/ABgY/5j1+P+J////iv/+/5L////////////+/////v8wLS//Kyww/y4wMP+T/f7/lP///53m
+        6v8RLDD/AIql/wPt//8N2fL/ANf0/wPR7f8V5/X/AX2I/xYiJP8vW2z/CmGT/wGIwP8Bs+L/As/v/wHP
+        8/8A0u3/ANLs/wDU7f8A0+7/W+/7/17i6f9n8vX/aPH6/2by8/9a7vz/b+/6/2nx9f8n3PH/Esvt/wDM
+        7/8D0vL/Jtzy/wLh/f8knbf/DS04/4/p6v+I//7/hf///4n////9//7///////v///8sLy3/Li8t/yww
+        Mf9c/P7/W/78/1z+//9v19b/FWZu/wCht/8A2fP/Auz+/wG00f8DX3L/RFhd/3zT1f9U/v//ar/P/xhK
+        aP8Ae5//AN/7/wDn/f8A0u3/J9zx/0j7/f891O//On/u/zBd7v8yWu7/Vbb1/3v6+/94/Pz/hPz7/3Hx
+        9v8cxvD/AKzv/wCXyv8BxeX/R+X3/wDH//8Ap9D/A3qU/yx2fP9g6ev/Rf///0n//////////f/+////
+        //8vLC7/LC4u/y0wLv9f/P//W//+/1z//v9c//3/c9rc/wA2O/8Er8X/AN7+/wC30f8AKzT/Y2Vm/83/
+        /f9Y/v3/furr/zs4NP8FS1L/ANHx/wTW+v8n3PL/dvv4/4X8/v9f1vb/GTTj/wQI4/8CB+X/OI/x/3r8
+        +/9w/vn/bfn//1zv+f8ovOb/DJ/R/wCGwP88vdj/aer9/ym95/8Ayf7/AOb+/wN9if9Jkpb/Rv3//0z9
+        /////////f////3///8uLy3/LSwu/zExMf9l/f7/Yvz//2D+/v9g/v7/X/7//3D2+v8KISP/AHmT/wDn
+        /P8Uyu7/DF1l/zg9Pv/R/v//kP3//zU+O/8BUF3/Atjz/wDe/P8n3PL/YfP4/4P7+/9h0/f/FzLh/wQJ
+        4v8xJ+z/Yaz6/2f7+/9y//z/b/r9/17y+P9q7P3/WOf8/0vc8f9A0fH/AKTd/z7Q8/9p/P7/ZPz9/w60
+        2f9Ep73/S//+/1P////8/f////////7+/v8uLS//Ly8v/zIwMP+Z//3/m////5v///+b//7/m////5fT
+        0/8FTFD/AqC4/wTe+/8A7f7/AK7D/w5fZP9+jY//fXBy/yUhJv8FV2n/ANrx/xTm9v9D5vX/auz9/2/+
+        +/9T1O3/O4Dt/y9c7f9Yiv//VLb2/zynw/8lfoL/R6Ok/2/w+f9v+v3/efv7/2/x9v9B1PT/G8Tw/13v
+        +/+C/fv/gvz8/1Pz//85scf/kNjf/5L//P///////f///////v8uLi7/MC4t/ywwMf+m/v7/pf///6X/
+        //+k/v7/ksnM/whOVf8ByeD/Au7//wPL9f8N1/T/AOf9/wPK5P8MXWT/EgwN/wcBAv8BX3L/Ddf2/0j6
+        +/9v8fj/ZvT1/2vx9f9n7/v/Ze/7/3nu8/9x8Pn/PKbF/wQqTf8BBAL/L2Jb/2Tx9P9x//r/afL0/3Hu
+        /P9n8vX/ZfTy/2fu/P9o9PX/YuLn/3T9+f9Uwsj/Q3B0/5fT0v/9/////v7+//////8uLy3/Li4u/y0u
+        Mv+n/f3/otvc/4K8wv+B1+n/P63L/wCht/8E3vv/A9f5/wDS7f8B0e//At3//wDX+P8qxOH/OXZ6/wQC
+        Av8AQVj/GsTu/0v6/f+C/Pz/ae78/2fu/P9p8ff/c/77/3X6/f9m8/b/BkpP/xsECP+OcG//r9HX/2fv
+        +/9c7/n/Zu76/2fv+/91+/v/cfD5/zq82v8KV3f/Ais0/0SkpP9f4ej/LHWL/47H0P///P///f/+////
+        //8uLS//Li8r/zExMf9+6ef/JVRq/wBch/8Aps//AdX9/wDg+f8C0PP/ANHv/wrX8v8SyfD/D8zr/w3Z
+        8v+B+/v/j7On/yIcF/8BKkv/AK76/17s/f+E/Pz/cfn9/2fy9f9l8vX/W+74/3L7/f9p8fX/Lnh6/01S
+        UP/JxMX/yvjy/2Xz9P9b8vb/aPP2/2bt+/9t+v3/YuPm/wxVe/8LABr/Rx0k/2uonv9l8ff/OJPG/2zS
+        3//8/v7//f/+//////8qLy7/LS0t/1xZVf8lVGn/BIm7/wG32/8CzvH/AN37/wPY8/8Azu7/Asz1/xTK
+        7v8F0PH/Adf6/1vv+//h////d/39/0d9eP8DIkn/AJvJ/0Ll9P90//v/XPL4/1vu+P9t8fj/bfD6/2ny
+        9P9c7fz/Y93j/13Q0/967/T/f/L8/3Lx+v9h8Pf/b/D5/2b09f9x//j/XOHo/wMkNP9CHSX/0Kaa/8z9
+        //9K3e3/CoKs/27O3v/9/////v/9//////8uLi7/OTk5/x86T/8Bbqb/H8Xu/wDm/v8A2fP/A9Ls/wDP
+        7/8A0fP/AND0/wDT7v8K1vX/d/z6/8b9+v+d+fr/nfv//5bW1v9mj5L/AERl/ymdwP9O1en/b+/6/4T9
+        +f957fT/ZvD8/2jx8/9d7/v/bfv8/2b9+v9Z8/j/WfP4/2Xv+/9m9PX/cfD4/2nv+f9m/P3/X+To/yN+
+        gv9tqpz/zvb0/37x//9Q0OL/i97m/5j///////7//v7+//////8wLi7/IyMj/wF+sP8A0+7/At/5/xPH
+        8P8Ay/r/DNjx/wTL+f8Aze3/ANPx/xLL7f9q7fv/uvr1/539/f+X9Pf/jNLR/5X///+h39//BQEM/wBZ
+        hv8AsOz/X+z5/1jx+P9a8vf/ZvD9/3Dx+v9m8fT/ae/7/2fu/v9q7/3/Ze/7/2fx9/9p7/n/Z+78/1ru
+        /P9o7vj/be/8/2rz9f93/Pr/cv35/yq85v9Ts9f/kv/9/5f+///9/P7///7////+//8wLS//ISYl/yOe
+        uP8A7v3/AOf9/xLJ8P8Dz/L/DNrz/xDH7/8SyfD/LuD3/2/x+P+x/v//dPz7/27p7f9zuLX/c////3T+
+        /f99v77/ABUf/wF7n/8B1/r/AtDs/wzZ9P8A2fP/Web7/2rw+v9w8fr/Z+/7/2r08/9p8fX/Z/P0/2fv
+        +/9e8vj/Z/L1/2Xv/P9v8Pn/Ze/7/3f8+v93+/v/ZP38/xKXvP9Mpr//Yv3//2b//v/9//////////r/
+        /v8pLiz/Nzk6/wNdbv8CrcX/AN37/wDe/P8A0e//Ecrs/wHS8v8K1/L/du7z/4D+//9+/P//eOzt/2Wl
+        qf9z//7/cP/9/4Hv8/9Yj5L/AFJd/wC70P8A5/3/Aczx/xHL7v8m3PL/WfP4/3f8+v9t+/z/b/n//2/w
+        +f9q7fv/bfD5/2Xw+f9v7/r/auv+/2ny9P9n7/v/c/77/2/+/P9m3eb/RqWh/0yjw/986u7/af///2r+
+        /v///v7////+//////8uLi7/Li4u/1VQUf8FSU7/AL7P/wDl/f8D1/r/AtHx/w/Y8/9v9/3/gv3//337
+        //93/P//dP/8/3T+/f93/v//gu3w/0p0c/8CUVr/D8zt/wLl//8BzO//AdPr/0fl9/9q7fv/Z+7+/235
+        //9v8fj/ae/7/2Xu/v9m8fr/cfn//2fw+f9m7vr/YfP4/3D4/P9n7/v/b/n//3X8+v9HpKP/Mk9W/3zu
+        7v9q/v7/a/7//27+///9///////+/////v8vLC7/Li8r/y8xMf+Z0tP/DGVz/wCiuP8A5v7/AOT//37x
+        /v+h/v//nf/+/57+/v+g/P//nf///6H+//+i8/b/Z4+U/wNve/8Cxef/AOX9/wDX+v8A0uz/Jtzy/2Dx
+        +f957vP/PqfC/xCQxf8nvOj/J9zx/zvq9/9m7/j/bfr9/236/f93+/v/gPv9/2zw9/9U1u3/Bp/S/xrG
+        8P9SrL3/nO3w/5j+/f+V//7/l/7//5r+///9//7///7////+//8tLiz/Ky0u/zExMf+f/P//hqyw/w5X
+        W/8Av87/cPr//6f8/v+l/f3/nv/9/6H//v+e/v7/n////6D9/v+Rt7n/AjlC/wC60/8A7v3/AtHx/wDO
+        7v8p3PH/cfD5/4T8/P9j3uL/DFZ4/wBAdv8BkNP/ALf0/wDI3/9O3vD/b/H4/1vj7/9f4vD/W+74/1r0
+        +f8oxOH/A362/wCAwf+I09z/nP3//5j9//+W/v3/mf7//5r+//////7//f/+/////v8wLi3/LS8v/y0v
+        MP99/P3/gP///37Kyf9LdHb/h/r9/4f7/P9+/f7/f/3//3v8//97//7/fP7+/3r9//99wcD/Aiwz/wWJ
+        vv8Byvv/DNrz/1T0//9g8vf/XvP3/3n+/P9e4+b/JDY3/wAfN/8Af6//AJ3c/wCRzf8Nj8T/CJ7U/wWf
+        0P8CsOz/AbDp/xHI7/866/r/X+Hu/wF4pf92zt7/cv7//3L+//9z////cv3//3X+/////v/////////+
+        /f8yLi3/KS4t/zAvM/+A//7/ffz9/4D+//+M6ej/hNrg/3/+//9//P//ev7+/33+//9//f7/fvz//3/+
+        //9KbXD/BgYU/wE3Vv8Fi7v/Gsj9/0n7/P+E/Pz/hfz7/2DR1P9Kmpv/fcfL/4js8P+H8fj/hPL4/4fz
+        9/+G8fn/Yr3Y/wBHY/8DiLr/AMz1/wrY8f9M+v//gf39/wlqkP92z93/cv79/3T9//9z/P7/dvz//3n/
+        ///+/f////7///79//8uLS//MC4u/zIwMP99+/z/fv3+/3/9/v9//v//ff/+/3/9/v98/f//f//+/379
+        /v+C/f//fv3+/1N4fP8NERL/AgMA/wAFBP8BN1b/D4/C/1LT7v9y+v//cPL5/0uanf9EbXD/fP3//3z+
+        /v96/P//fvz//3v///99////g/r5/xghJP9Bioj/cf/6/2fy9f9u//b/Zt7k/xR4mv930dz/ef39/3j9
+        //9z////d/7//3v9/P/9//7///////////8uLS//Li4u/y4xL/9++///f/3//3///v+A+///f/7//3/9
+        /v9//f//fv3+/3z9//9+/P//ff///zhLUP8ABAP/AAQL/wYBAv8AChH/ASIy/wEzOf8kVFj/N3Z6/37L
+        zv9//P//ff///338/f99////fv3+/3v+//98/f//gvr//w9BVf9Go6T/hPz8/4X8/v9HpaT/JFRY/4Xs
+        7/94/f//d/7//3r9//96/f//eP3//379/v/8/v////////z+/v8uLy3/Li8t/y8vL/+j/f7/of7//6P/
+        //+k/v7/ofz//6L//v+k/v7/pv3//6P///+h/v3/ov7//z9SVf8GAQL/AgQF/xoaGv8iGxj/JBsX/xYM
+        DP8ZJiT/hK2w/6L+//+i/f//ov/+/6T+//+i/v//of7//6H+//+i/v//m9re/wRZi/8nveb/aPv9/3X6
+        /f9Bi4f/Kjw9/6b7/f+i/f//n/7//6L+//+g/v3/nv7+/6D9/////////v7+//////8uLS//LC4v/zAx
+        L/+n/P7/pP7+/6b+/v+p/v//pP7//6v+//+m/f//pv/8/6n+//+m/f//qP7+/z9TVP8GAQL/GhsZ/01S
+        UP99cHL/SUpI/yYjJf9zlZX/pf///6j8//+o/P//p////6v+//+l////p/7//6f+//+cz9H/CS09/wJS
+        jf8EiL3/Jbzp/13v+/9Diof/KTs8/6X+//+m/v7/pf///6f+//+k/v7/pP7//6b9//////7//f////3/
+        //8sLi7/Ky0t/zIwMP9+/fz/ff///379/v9++///gP3//379/v99/v//ff/+/338/f9//vz/ca6w/w4R
+        Ff8YGhv/U1JU/3t6fv9iZ2b/Unh8/4LIyP99////fP7+/378//9///7/fv3+/3/9/v9+////fvv//3/+
+        //9jlZP/AAQJ/wAkPP8AKkv/AEBc/zB3ev91v8X/iPPx/379/v9//v//ff7//378//9//v//fP7+/3//
+        /v///v7//f////////8uLy3/MC4u/y4wMf9+/f7/fv3+/4D+//+A/v//f/79/3///v9++///gP3//379
+        /v9MbXD/DBES/xcaGP9LSEr/Z2lq/2dpaf9Ibm7/eLq5/33///98/v7/fvz//3/+/f9+/f7/f/3//3/+
+        //9//v3/f/7//3v8//9qoKD/BwEG/wYBAv8TCwz/FwoM/w0NDf+K3d//fv79/3/8//9+/P//f/7//378
+        /f9//v//e//+/4H9/f///v////////////8yLS7/LC4u/y4wMf+p/P7/qf7//6T+//+o/f//p////6j+
+        /v+p////qv3+/6b+/v9BVVb/JCYn/1hTVf87P0D/GxkZ/y08Pv+SwMH/qf7//6j+/v+o/P//qv3+/6T+
+        //+n////pv3//6X///+k/v7/pv3//6v8//96oKD/BgEC/xEMDf9NPjv/Tj89/w0QFP+p6en/qP7+/6j/
+        //+o/f//qf7//6j9//+o/f//qP3//6v8///7///////////+/v8sLi7/Li8t/zIvMf+i//z/ov36/6P9
+        /f+i/P3/pP7//6H9/v+j/f7/o/3+/6H9/v89UlP/JCYn/2iHhP+Erq3/gq6v/4y3uv+j/f7/o/3+/6T+
+        //+j/f3/of3+/6P9/v+j/f7/ofj6/6P4+v+i+fv/pPr6/6T6+v93n53/BwAD/ycnJ/9NUlH/aIaH/32n
+        pv+p/fv/pf39/6b9//+n//3/pv3//6f+//+o/v7/pP7+/6f//f/+/f///f/+//3//v8wLS//Li8t/y4w
+        MP8uMDH/LjAw/y0wLv8wMDD/LS8v/y0vMP8tLy//LjEv/y4wMP9FRUX/GR0e/yUqKf8/QUH/WltX/2Fk
+        Yv9paWn/bG5u/3R0dP93eXn/dXV1/3h4eP+CgoL/kpCP/5ybl/+ipaP/qqup/6utrv9+gIH/JyAn/1lf
+        Xv9bYF//hoaG/8HEwv/MzMz/2tnb/+bl5//w8PD/+vv5//v////9//////7///z9///////////+//7+
+        /v8uLS//LC8t/zEvL/8uLS//Li4u/y4uLv8vLjD/Li0v/y4vLf8vMC7/LS4s/ywuLv8wLi7/Li4u/zQw
+        L/9RUFL/dXNz/39/f/+CgoL/i4uL/5OVlf+Ympv/m5ub/6ekpv+xs7T/vby+/8vJyf/R0NL/1NnY/9rY
+        2P+NkpH/EQwO/21vcP+/vb3/397a/9vd3v/j5OL/6ujo//Dw8P/49ff/+fv8///+///////////////+
+        ////////+//+///+//8wLi7/MC4t/y4uLv8wLS//Li4u/zAuLv8sLi7/Li4u/zEuMP8uLS//Li8t/ywu
+        L/8sLi//LSwu/zQ1M/9gYmL/ioyM/5iYmP+gnZ//q6an/6+xsf+4trX/v7+//8jKyv/X19f/5eXl/+7w
+        8P/8+P3///////3///+foaH/AwQC/1FTU////v////7////+/////v///f////z//f//////////////
+        //////7//v/9/////////////f/+///+//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
+  </data>
+</root>

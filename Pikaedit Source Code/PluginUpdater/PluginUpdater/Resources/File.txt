@@ -1,0 +1,4 @@
+Legality Analysis|https://dl.dropboxusercontent.com/u/87538979/Pikaedit/Plugins/Legality%20Plugin.dll
+Convert Party to Simultator code|https://dl.dropboxusercontent.com/u/87538979/Pikaedit/Plugins/Simulator%20Code.dll
+Surprise!|https://dl.dropboxusercontent.com/u/87538979/Pikaedit/Plugins/Surprise.dll
+Convert pkm to pkx|https://dl.dropboxusercontent.com/u/87538979/Pikaedit/Plugins/PKM%20to%20PKX.dll

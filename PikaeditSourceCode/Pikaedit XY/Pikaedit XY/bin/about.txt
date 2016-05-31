@@ -1,0 +1,20 @@
+Pikaedit XY is a pkx (Gen 6 Pokemon file) editor, capable of editing currently known data
+
+Author/Developer:
+RubenPikachu
+
+Official websites:
+http://pikaedit.wordpress.com/
+http://www.facebook.com/Pikaedit
+http://www.pokexperto.net/foros/index.php?topic=35273.0
+
+Mentions:
+Thanks to Bond697 and xfr for dumping the pkx file structure
+Thanks to ReignOfComputer and all who helped to fill the spreadsheet with the IDs of moves, abilities and forms
+Thanks to Flurry from GBAtemp for the new icon
+
+Disclaimer:
+Pokémon © 1995 - 2014
+Pokémon, Pocket Monsters, Gamefreak Inc, Creature Inc,
+And all other names associated are trademarks of Nintendo.
+All Rights Reserved.

@@ -1,0 +1,1846 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD42A632-EA48-4DCB-A96B-6D7129C9161F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pikaedit_Gen4</RootNamespace>
+    <AssemblyName>Pikaedit Gen4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FodyPath>..\packages\Fody.1.14.0</FodyPath>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pikaedit.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E4ACEE27A171D069FAEDFC9AC2411F9C94BF9AB8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Pikaedit Gen4_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Embedded|AnyCPU'">
+    <OutputPath>bin\Embedded\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PikaeditLib">
+      <HintPath>..\..\PikaeditLib\PikaeditLib\bin\Release\PikaeditLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.92.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.92.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.92.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Box.cs" />
+    <Compile Include="BWGTS_Crypter.cs" />
+    <Compile Include="DayCarePKM.cs" />
+    <Compile Include="dns.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Func.cs" />
+    <Compile Include="gts.cs" />
+    <Compile Include="HGTS_Crypter.cs" />
+    <Compile Include="IVSet.cs" />
+    <Compile Include="MoveSet.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="PidGen.cs" />
+    <Compile Include="PkmLib.cs" />
+    <Compile Include="Pokemon.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonSet.cs" />
+    <Compile Include="SaveFile.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Slot.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrainerEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerEditor.Designer.cs">
+      <DependentUpon>TrainerEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerInfo.cs" />
+    <Compile Include="Updater.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TrainerEditor.resx">
+      <DependentUpon>TrainerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Fody.targets" />
+    <None Include="packages.config" />
+    <None Include="Pikaedit Gen4_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\en\enVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\fr\frVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\gr\grVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\kr\krAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\kr\krItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\kr\krLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\kr\krMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\kr\krNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\kr\krSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\about.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\changelog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\147.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\153.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\154.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\155.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\156.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\158.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\159.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\160.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\170.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\174.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\175.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\176.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\177.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\178.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\182.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\183.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\184.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\187.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\188.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\189.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\190.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\194.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\195.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\196.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\197.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\198.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\199.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\203.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\205.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\208.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\209.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\210.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\215.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\216.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\217.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\218.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\219.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\223.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\224.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\226.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\228.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\229.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\231.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\236.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\238.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\239.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\244.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\245.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\246.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\247.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\249.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\252.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\253.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\254.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\255.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\257.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\258.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\259.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\261.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\262.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\263.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\264.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\265.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\266.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\267.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\268.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\269.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\271.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\272.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\274.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\275.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\276.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\277.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\278.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\279.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\283.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\284.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\285.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\286.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\288.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\289.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\290.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\295.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\297.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\298.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\299.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\304.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\305.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\306.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\307.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\308.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\309.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\310.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\313.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\315.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\316.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\317.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\318.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\319.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\325.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\327.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\329.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\330.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\331.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\332.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\333.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\334.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\335.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\336.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\337.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\339.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\340.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\341.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\342.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\343.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\344.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\345.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\346.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\347.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\348.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\349.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\352.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\353.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\354.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\355.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\357.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\358.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\360.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\363.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\364.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\366.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\367.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\368.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\369.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\370.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\372.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\373.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\375.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\376.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\377.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\378.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\380.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\381.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\382.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\383.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\384.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\385.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\386.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\386-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\386-d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\386-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\387.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\388.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\389.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\390.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\392.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\393.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\394.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\395.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\396.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\397.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\398.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\399.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\403.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\405.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\406.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\407.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\408.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\409.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\410.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\411.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\412.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\412-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\412-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\413.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\413-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\413-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\414.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\415.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\416.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\417.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\418.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\419.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\420.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\421-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\422-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\423-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\425.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\426.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\427.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\428.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\430.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\432.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\433.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\434.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\435.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\436.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\438.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\439.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\440.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\442.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\443.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\444.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\445.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\446.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\447.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\448.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\449.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\451.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\452.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\453.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\454.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\455.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\456.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\457.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\458.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\459.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\460.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\462.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\463.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\465.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\468.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\469.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\470.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\471.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\473.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\474.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\475.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\476.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\477.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\478.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\479.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\479-f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\479-h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\479-m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\479-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\479-w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\483.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\484.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\485.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\486.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\487-o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\488.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\490.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\492-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Data\icons\493.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Embedded\x86\x86 SQLite.Interop.dll" />
+    <None Include="bin\Embedded\x64\x64 SQLite.Interop.dll" />
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="Resources\PikaeditLib.dll" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\PluginUpdater.exe" />
+    <None Include="bin\Data\Updater.exe" />
+    <Content Include="pikaedit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="Fody.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

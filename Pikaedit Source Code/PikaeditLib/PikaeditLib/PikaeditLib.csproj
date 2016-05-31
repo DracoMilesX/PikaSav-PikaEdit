@@ -1,0 +1,2270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{511161C1-14A0-4935-A31C-224880AB88E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pikaedit_Lib</RootNamespace>
+    <AssemblyName>PikaeditLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FodyPath>..\packages\Fody.1.14.0</FodyPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\PikaeditLib.XML</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Embedded|AnyCPU'">
+    <OutputPath>bin\Embedded\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Embedded\PikaeditLib.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.92.0\lib\net40\System.Data.SQLite.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.92.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.92.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Box.cs" />
+    <Compile Include="BoxGen4.cs" />
+    <Compile Include="DayCareGen4.cs" />
+    <Compile Include="DayCare.cs" />
+    <Compile Include="Func.cs" />
+    <Compile Include="IPlugin.cs" />
+    <Compile Include="IVSet.cs" />
+    <Compile Include="MoveSet.cs" />
+    <Compile Include="PidGen.cs" />
+    <Compile Include="PkmLib.cs" />
+    <Compile Include="Pokemon.cs" />
+    <Compile Include="PokemonGen4.cs" />
+    <Compile Include="PokemonXY.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonSet.cs" />
+    <Compile Include="SaveFile.cs" />
+    <Compile Include="SaveFileGen4.cs" />
+    <Compile Include="SuperTraining.cs" />
+    <Compile Include="TrainerInfo.cs" />
+    <Compile Include="TrainerInfoGen4.cs" />
+    <Compile Include="Veekun.cs" />
+    <Compile Include="WonderCard.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Data\en\enAbilities.txt" />
+    <None Include="Fody.targets" />
+    <None Include="packages.config" />
+    <None Include="veekun-pokedex.sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\gr\grVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krAbilities.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krItems.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krLocations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krMoves.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krNatures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krSpecies.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\147.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\153.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\154.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\155.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\156.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\158.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\159.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\160.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\170.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\174.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\175.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\176.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\177.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\178.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\182.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\183.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\184.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\187.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\188.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\189.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\190.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\194.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\195.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\196.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\197.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\198.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\199.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\203.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\205.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\208.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\209.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\210.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\215.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\216.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\217.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\218.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\219.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\223.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\224.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\226.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\228.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\229.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\231.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\236.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\238.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\239.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\244.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\245.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\246.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\247.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\249.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\252.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\253.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\254.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\255.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\257.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\258.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\259.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\261.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\262.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\263.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\264.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\265.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\266.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\267.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\268.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\269.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\271.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\272.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\274.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\275.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\276.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\277.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\278.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\279.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\283.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\284.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\285.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\286.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\288.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\289.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\290.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\295.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\297.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\298.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\299.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\304.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\305.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\306.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\307.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\308.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\309.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\310.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\313.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\315.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\316.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\317.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\318.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\319.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\325.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\327.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\329.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\330.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\331.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\332.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\333.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\334.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\335.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\336.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\337.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\339.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\340.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\341.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\342.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\343.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\344.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\345.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\346.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\347.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\348.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\349.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\352.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\353.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\354.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\355.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\357.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\358.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\360.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\363.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\364.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\366.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\367.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\368.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\369.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\370.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\372.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\373.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\375.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\376.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\377.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\378.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\379.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\380.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\381.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\382.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\383.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\384.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\385.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\386.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\386-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\386-d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\386-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\387.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\388.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\389.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\390.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\392.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\393.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\394.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\395.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\396.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\397.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\398.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\399.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\403.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\405.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\406.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\407.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\408.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\409.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\410.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\411.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\412.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\412-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\412-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\413.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\413-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\413-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\414.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\415.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\416.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\417.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\418.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\419.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\420.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\421-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\422-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\423-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\425.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\426.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\427.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\428.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\430.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\432.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\433.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\434.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\435.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\436.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\438.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\439.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\440.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\442.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\443.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\444.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\445.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\446.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\447.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\448.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\449.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\451.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\452.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\453.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\454.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\455.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\456.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\457.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\458.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\459.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\460.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\462.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\463.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\465.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\468.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\469.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\470.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\471.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\473.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\474.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\475.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\476.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\477.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\478.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\479.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\479-f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\479-h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\479-m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\479-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\479-w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\483.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\484.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\485.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\486.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\487-o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\488.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\490.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\492-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\493.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\494.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\495.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\496.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\497.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\498.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\502.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\503.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\504.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\505.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\506.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\507.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\508.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\509.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\510.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\513.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\514.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\515.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\516.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\517.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\518.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\519.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\520.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\521-f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\522.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\523.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\524.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\525.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\526.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\527.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\528.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\529.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\532.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\533.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\534.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\535.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\536.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\537.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\538.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\539.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\540.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\541.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\543.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\544.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\545.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\546.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\547.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\548.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\549.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\550.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\550-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\552.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\553.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\554.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\555.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\555-z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\556.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\557.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\558.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\559.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\560.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\562.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\563.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\564.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\565.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\566.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\567.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\568.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\569.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\570.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\572.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\573.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\574.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\575.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\576.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\577.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\578.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\579.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\580.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\581.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\582.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\583.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\584.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\585.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\586.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\587.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\588.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\589.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\590.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\591.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\592.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\592-f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\593.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\593-f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\594.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\595.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\596.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\597.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\598.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\599.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\602.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\603.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\604.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\605.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\606.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\607.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\608.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\609.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\610.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\612.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\613.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\614.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\615.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\616.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\617.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\618.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\619.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\620.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\621.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\622.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\623.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\624.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\625.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\626.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\627.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\628.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\629.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\630.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\631.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\632.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\633.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\634.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\635.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\636.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\637.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\638.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\639.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\641-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\642-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\643.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\644.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\645.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\645-t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\646.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\646-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\646-w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\647.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\647-r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\648.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\648-p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\icons_XY\649.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enLocationsGen4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frLocationsGen4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\en\enLocationsXY.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\fr\frLocationsXY.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krVersions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\kr\krLanguages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="x64\SQLite.Interop.dll" />
+    <Content Include="x86\SQLite.Interop.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="Fody.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

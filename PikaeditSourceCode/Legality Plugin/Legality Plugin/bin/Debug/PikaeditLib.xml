@@ -1,0 +1,4406 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PikaeditLib</name>
+    </assembly>
+    <members>
+        <member name="T:Pikaedit_Lib.Box">
+            <summary>
+            Represents a Pokemon save file Box
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Box.pkmdata">
+            <summary>
+            Contains pokemon slots
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Box.setProperties(System.String,System.Byte)">
+            <summary>
+            Set box properties
+            </summary>
+            <param name="name">Box name</param>
+            <param name="wallpaper">Box wallpaper as a byte</param>
+        </member>
+        <member name="M:Pikaedit_Lib.Box.getCount">
+            <summary>
+            Get number of non-empty slots in the box
+            </summary>
+            <returns>Number of non-empty slots</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Box.saveBoxFile">
+            <summary>
+            Create a byte[] containing box data for a Pikaedit .sfb file
+            </summary>
+            <returns>byte[] containing box pokemon data, name and wallpaper</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Box.loadBoxFile(System.Byte[])">
+            <summary>
+            Load a byte[] containing box data from a Pikaedit .sfb file
+            </summary>
+            <param name="data">byte[] of a .sfb file</param>
+        </member>
+        <member name="T:Pikaedit_Lib.DayCarePKM">
+            <summary>
+            Represents a Save file Day-Care data
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.DayCarePKM.pkmdata">
+            <summary>
+            Pokemon data stored in the Day-Care
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.DayCarePKM.hasEgg">
+            <summary>
+            Represents if the Day-Care has an egg waiting to be delivered
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.DayCarePKM.getCount">
+            <summary>
+            Get the count of Pokemon stored
+            </summary>
+            <returns>Number of non-empty pokemon stored</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.DayCarePKM.getEggByte">
+            <summary>
+            Represent hasEgg bool as a byte
+            </summary>
+            <returns>byte value of hasEgg as 1 or 0</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.Func">
+            <summary>
+            Functions used in most classes
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.zeros(System.String)">
+            <summary>
+            Add zero to strings with a number for hex and date formats
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.convertToByteArray(System.UInt16[])">
+            <summary>
+            Give byte subarray
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.subArray(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Give byte subarray
+            </summary>
+            <param name="arr">byte[] to use</param>
+            <param name="i">Start index</param>
+            <param name="length">SubArray length</param>
+            <returns>byte[] subarray from the array</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.ushortSubArray(System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+            Give ushort subarray
+            </summary>
+            <param name="arr">ushort[] to use</param>
+            <param name="i">Start index</param>
+            <param name="length">SubArray length</param>
+            <returns>ushort[] subarray from the array</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.boolSubArray(System.Boolean[],System.Int32,System.Int32)">
+            <summary>
+            Give bool subarray
+            </summary>
+            <param name="arr">bool[] to use</param>
+            <param name="i">Start index</param>
+            <param name="length">SubArray length</param>
+            <returns>bool[] subarray from the array</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.mergeArray(System.Byte[],System.Byte[])">
+            <summary>
+            Merge two byte[] into one
+            </summary>
+            <param name="arr">First byte[]</param>
+            <param name="arr2">Second byte[]</param>
+            <returns>Merged byte[]</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.getUInt16(System.Byte[],System.Int32)">
+            <summary>
+            Get a ushort value represented in a byte[] at a selected index and the next byte
+            </summary>
+            <param name="arr">byte[] to use</param>
+            <param name="i">Start index</param>
+            <returns>ushort value taken from the byte[] at a selected index and the next byte</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.getUInt32(System.Byte[],System.Int32)">
+            <summary>
+            Get a uint value represented in a byte[] at a selected index and the next 4 bytes
+            </summary>
+            <param name="arr">byte[] to use</param>
+            <param name="i">Start index</param>
+            <returns>uint value taken from the byte[] at a selected index and the 4 bytes</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.getString(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Convert a range of bytes of an array to a Unicode string (ignores trash bytes)
+            </summary>
+            <param name="arr">byte[] to use</param>
+            <param name="i">Start index</param>
+            <param name="length">Max. Number of characters of the string</param>
+            <returns>Unicode string found on the selected array range</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Func.getfromString(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Get the byte[] from a string
+            </summary>
+            <param name="s">String to convert</param>
+            <param name="maxlength">Maximum length of the string (byte[].Length will be double this)</param>
+            <param name="allff">All trash bytes are 0xFFFF?</param>
+            <returns>byte[] representing the Unicode string</returns>
+        </member>
+        <member name="F:Pikaedit_Lib.Func.SeedTable">
+            <summary>
+            Save File checksum calculation seed table
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.Process">
+            <summary>
+            Represents Processes available to be done after Plugin execution
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Process.Load_Pkm">
+            <summary>
+            Load returned Pokemon to Pikaedit PKM Editor
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Process.Update_Save_File">
+            <summary>
+            Update save file data (Logs and slots)
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.Requirement">
+            <summary>
+            Represents Requirements for plugin to be run
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Requirement.Loaded_Save_File">
+            <summary>
+            Pikaedit must have a loaded Save File to run plugin
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.IPlugin">
+            <summary>
+            Interface required to run this as a Pikaedit plugin
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.IPlugin.getName">
+            <summary>
+            Represents the plugin's name
+            </summary>
+            <returns>Plugin's name as string</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.IPlugin.getVersion">
+            <summary>
+            Represents the plugin's version
+            </summary>
+            <returns>Plugin's version as string</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.IPlugin.getAuthor">
+            <summary>
+            Represents the plugin's author(s)
+            </summary>
+            <returns>Plugin's author(s) as string</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.IPlugin.getPluginInfo">
+            <summary>
+            Represents the plugin's information, shown as a tooltip when selecting plugin in Pikaedit
+            </summary>
+            <returns>Plugin's info</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.IPlugin.Do">
+            <summary>
+            Process to do in Pikaedit, for Windows Forms use ShowDialog() to display them
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.IPlugin.getPokemon">
+            <summary>
+            Get used by Pikaedit to receive edited Pokemon data you send, Set used to receive loaded PKM in Pikaedit
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.IPlugin.getSaveFile">
+            <summary>
+            Get used by Pikaedit to receive edited Save File data you send, Set used to reveive loaded Save File
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.IPlugin.setPostProcess">
+            <summary>
+            Get used by Pikaedit to receive Process to run after plugin execution
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.IPlugin.setRequirement">
+            <summary>
+            Get used by Pikaedit to receive Requirement needed to run plugin
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.IVSet">
+            <summary>
+            Represents the uint that represent ivs, isEgg and isNicknamed flags
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.IVSet.isEgg">
+            <summary>
+            Pokemon is an egg flag
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.IVSet.isNick">
+            <summary>
+            Pokemon is Nicknamed flag
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.IVSet.getIV">
+            <summary>
+            Return ivs and flags as a uint used in pkm files
+            </summary>
+            <returns>uint value representing the ivs and flags stored</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.Move">
+            <summary>
+            Represents a Pokemon move slot including PP and PP Ups
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Move.move">
+            <summary>
+            Pokemon move value
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Move.pp">
+            <summary>
+            Current PP
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Move.ppUp">
+            <summary>
+            PP Ups used on this move
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.MoveSet">
+            <summary>
+            Contains a Pokemon moveset (Move index number, Current PP, PP Ups)
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.MoveSet.isEmpty">
+            <summary>
+            Return a bool indicating if the pokemon moveset is empty (All moves are 0)
+            </summary>
+            <returns>true if all moves are "None", false if there is at least one move</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.PidGen">
+            <summary>
+            Static class used on Gen 5 PID Generator, can be used to generate a Gen 5 PID
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.PidGen.finalPID">
+            <summary>
+            This variable will have the PID generated
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.PidGen.srand(System.UInt32)">
+            <summary>
+            Initialize seed
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.PidGen.rand">
+            <summary>
+            Call the next RNG
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.PidGen.prand">
+            <summary>
+            Call the previous RNG
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.PidGen.generate(Pikaedit_Lib.PidGen.PIDTypes,Pikaedit_Lib.PidGen.Shininess,System.Int32,System.Int32,Pikaedit_Lib.Pokemon)">
+            <summary>
+            Generate a Gen 5 PID depending on the type
+            </summary>
+            <param name="type">Type of PID to generate (PidGen.PIDTypes)</param>
+            <param name="shiny">Determine if the PID can result a shiny or normal pokemon</param>
+            <param name="ability">Define ability index 0-1, 2 = DW and will give a random byte between of 0 or 1</param>
+            <param name="gender">0 Male, 1 Female, 2 Genderless</param>
+            <param name="pkm">Pokemon which will have the PID generated</param>
+        </member>
+        <member name="T:Pikaedit_Lib.PidGen.PIDTypes">
+            <summary>
+            PID Generation Types
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.PidGen.PIDTypes.Shiny_Event">
+            <summary>
+            Dynamic shiny Wonder Cards
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.PidGen.PIDTypes.Shiny_Locked">
+            <summary>
+            Pokemon that cannot be shiny
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.PidGen.Shininess">
+            <summary>
+            Shiny generation possibilities
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.PidGen.GenderValue">
+            <summary>
+            Values used to determine gender on the PID based on the species gender ratio
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.PkmLib">
+            <summary>
+            Contains all Libraries needed for all classes
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.PkmLib.getSprite(System.UInt16,System.String)">
+            <summary>
+            Get pokemon sprite
+            </summary>
+            <param name="pkmNo">Species Pokedex number</param>
+            <param name="form">Pokemon form</param>
+            <returns>Given Pokemon sprite as Image</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.Pokemon">
+            <summary>
+            Represents a Pokemon data as an object
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.data">
+            <summary>
+            byte[] representing a decrypted pokemon from a save file
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.isEmpty">
+            <summary>
+            Pokemon data is Empty flag
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.partypkm">
+            <summary>
+            Pokemon data has a party block
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.nicktb">
+            <summary>
+            Nickname with trash bytes
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.ottb">
+            <summary>
+            OT with trash bytes
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.no">
+            <summary>
+            Pokemon pokedex number
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.hpType">
+            <summary>
+            Hidden Power type
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.hpPower">
+            <summary>
+            Hidden Power base power
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.sprite">
+            <summary>
+            Contains the pokemon XY sprite
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.Pokemon.gen">
+            <summary>
+            Gen the pokemon came from (based from version)
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.srand(System.UInt32)">
+            <summary>
+            Initialize seed
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.rand">
+            <summary>
+            Call the next RNG
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.prand">
+            <summary>
+            Call the previous RNG
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.baseStats">
+            <summary>
+            Calculate Base Stats depending on species and form
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.updateStats">
+            <summary>
+            Convert to Party PKM and calculate stats
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.clear">
+            <summary>
+            Delete pkm data and make the array have zeros
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.#ctor">
+            <summary>
+            Initialize pkm data without setting variables (moving pkm)
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.#ctor(System.UInt32,System.String,System.String,System.String,System.String,System.UInt32,System.Byte[],System.Byte[],System.String[],System.Byte[],System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Byte)">
+            <summary>
+            Initialize pkm data with variables data and no array
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.#ctor(System.Byte[],System.Boolean)">
+            <summary>
+            Load a Pokemon into the class and initialize variables
+            </summary>
+            <param name="data">byte[] of a pokemon file</param>
+            <param name="decryptData">Force a decrypt, if false, it will detect if the pokemon needs to be decrypted</param>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.decrypt">
+            <summary>
+            Decrypt pkm data
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.encrypt">
+            <summary>
+            Encrypt pkm data
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.checksumUpdate">
+            <summary>
+            Calculates checksum
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.save(System.Boolean)">
+            <summary>
+            Save all variables and insert their values into data, automatically calculates checksum and updates stats
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.updateSprite">
+            <summary>
+            Updates the Pokemon sprite based on its species
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.hiddenPower">
+            <summary>
+            Calculates Hidden Power type and Base Power
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.Clone">
+            <summary>
+            Return a copy of the Pokemon object
+            </summary>
+            <returns>Clone of a Pokemon object</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.getPC">
+            <summary>
+            Receive a byte[] of this Pokemon without Party Block
+            </summary>
+            <returns>Returns a byte[136] of the Pokemon as PC pkm</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.Pokemon.getEncrypted(System.Boolean)">
+            <summary>
+            Returns a Copy of the Pokemon encrypted without encrypting this object data
+            </summary>
+            <param name="party">Include party block</param>
+            <returns>byte[] of the Pokemon encrypted</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._10">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._100">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._101">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._102">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._103">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._104">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._105">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._106">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._107">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._108">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._109">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._11">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._110">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._111">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._112">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._113">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._114">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._115">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._116">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._117">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._118">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._119">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._12">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._120">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._121">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._122">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._123">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._124">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._125">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._126">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._127">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._128">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._129">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._13">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._130">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._131">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._132">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._133">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._134">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._135">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._136">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._137">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._138">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._139">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._14">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._140">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._141">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._142">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._143">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._144">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._145">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._146">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._147">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._148">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._149">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._15">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._150">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._151">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._152">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._153">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._154">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._155">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._156">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._157">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._158">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._159">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._160">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._161">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._162">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._163">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._164">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._165">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._166">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._167">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._168">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._169">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._17">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._170">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._171">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._172">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._173">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._174">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._175">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._176">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._177">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._178">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._179">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._18">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._180">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._181">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._182">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._183">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._184">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._185">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._186">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._187">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._188">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._189">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._19">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._190">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._191">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._192">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._193">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._194">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._195">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._196">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._197">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._198">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._199">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._2">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._20">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._200">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._201">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._202">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._203">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._204">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._205">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._206">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._207">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._208">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._209">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._21">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._210">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._211">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._212">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._213">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._214">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._215">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._216">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._217">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._218">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._219">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._22">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._220">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._221">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._222">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._223">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._224">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._225">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._226">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._227">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._228">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._229">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._23">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._230">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._231">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._232">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._233">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._234">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._235">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._236">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._237">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._238">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._239">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._24">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._240">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._241">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._242">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._243">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._244">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._245">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._246">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._247">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._248">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._249">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._250">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._251">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._252">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._253">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._254">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._255">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._256">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._257">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._258">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._259">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._26">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._260">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._261">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._262">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._263">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._264">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._265">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._266">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._267">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._268">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._269">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._27">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._270">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._271">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._272">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._273">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._274">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._275">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._276">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._277">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._278">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._279">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._28">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._280">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._281">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._282">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._283">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._284">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._285">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._286">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._287">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._288">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._289">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._29">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._290">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._291">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._292">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._293">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._294">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._295">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._296">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._297">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._298">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._299">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._3">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._30">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._300">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._301">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._302">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._303">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._304">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._305">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._306">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._307">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._308">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._309">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._31">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._310">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._311">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._312">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._313">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._314">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._315">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._316">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._317">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._318">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._319">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._32">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._320">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._321">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._322">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._323">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._324">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._325">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._326">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._327">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._328">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._329">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._33">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._330">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._331">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._332">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._333">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._334">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._335">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._336">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._337">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._338">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._339">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._34">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._340">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._341">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._342">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._343">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._344">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._345">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._346">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._347">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._348">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._349">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._35">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._350">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._351">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._352">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._353">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._354">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._355">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._356">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._357">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._358">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._359">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._36">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._360">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._361">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._362">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._363">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._364">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._365">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._366">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._367">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._368">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._369">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._37">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._370">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._371">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._372">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._373">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._374">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._375">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._376">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._377">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._378">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._379">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._38">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._380">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._381">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._382">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._383">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._384">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._385">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._386">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._386_a">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._386_d">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._386_s">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._387">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._388">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._389">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._39">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._390">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._391">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._392">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._393">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._394">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._395">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._396">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._397">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._398">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._399">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._4">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._40">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._400">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._401">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._402">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._403">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._404">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._405">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._406">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._407">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._408">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._409">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._41">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._410">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._411">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._412">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._412_s">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._412_t">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._413">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._413_s">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._413_t">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._414">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._415">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._416">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._417">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._418">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._419">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._42">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._420">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._421">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._421_s">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._422">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._422_e">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._423">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._423_e">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._424">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._425">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._426">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._427">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._428">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._429">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._43">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._430">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._431">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._432">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._433">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._434">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._435">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._436">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._437">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._438">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._439">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._44">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._440">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._441">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._442">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._443">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._444">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._445">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._446">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._447">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._448">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._449">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._45">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._450">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._451">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._452">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._453">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._454">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._455">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._456">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._457">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._458">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._459">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._46">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._460">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._461">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._462">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._463">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._464">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._465">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._466">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._467">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._468">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._469">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._47">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._470">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._471">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._472">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._473">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._474">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._475">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._476">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._477">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._478">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._479">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._479_f">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._479_h">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._479_m">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._479_s">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._479_w">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._48">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._480">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._481">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._482">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._483">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._484">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._485">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._486">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._487">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._487_o">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._488">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._489">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._49">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._490">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._491">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._492">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._492_s">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._493">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._494">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._495">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._496">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._497">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._498">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._499">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._5">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._50">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._500">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._501">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._502">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._503">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._504">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._505">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._506">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._507">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._508">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._509">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._51">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._510">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._511">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._512">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._513">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._514">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._515">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._516">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._517">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._518">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._519">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._52">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._520">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._521">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._521_f">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._522">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._523">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._524">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._525">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._526">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._527">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._528">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._529">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._53">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._530">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._531">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._532">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._533">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._534">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._535">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._536">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._537">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._538">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._539">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._54">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._540">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._541">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._542">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._543">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._544">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._545">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._546">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._547">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._548">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._549">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._55">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._550">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._550_b">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._551">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._552">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._553">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._554">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._555">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._555_z">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._556">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._557">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._558">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._559">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._56">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._560">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._561">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._562">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._563">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._564">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._565">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._566">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._567">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._568">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._569">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._57">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._570">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._571">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._572">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._573">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._574">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._575">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._576">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._577">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._578">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._579">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._58">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._580">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._581">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._582">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._583">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._584">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._585">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._586">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._587">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._588">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._589">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._59">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._590">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._591">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._592">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._592_f">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._593">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._593_f">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._594">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._595">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._596">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._597">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._598">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._599">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._6">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._60">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._600">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._601">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._602">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._603">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._604">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._605">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._606">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._607">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._608">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._609">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._61">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._610">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._611">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._612">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._613">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._614">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._615">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._616">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._617">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._618">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._619">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._62">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._620">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._621">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._622">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._623">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._624">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._625">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._626">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._627">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._628">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._629">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._63">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._630">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._631">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._632">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._633">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._634">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._635">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._636">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._637">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._638">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._639">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._64">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._640">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._641">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._641_t">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._642">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._642_t">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._643">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._644">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._645">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._645_t">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._646">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._646_b">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._646_w">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._647">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._647_r">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._648">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._648_p">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._649">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._65">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._66">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._67">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._68">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._69">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._7">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._70">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._71">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._72">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._73">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._74">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._75">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._76">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._77">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._78">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._79">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._8">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._80">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._81">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._82">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._83">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._84">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._85">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._86">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._87">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._88">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._89">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._9">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._90">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._91">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._92">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._93">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._94">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._95">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._96">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._97">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._98">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources._99">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enAbilities">
+            <summary>
+              Looks up a localized string similar to None,Stench,Drizzle,Speed Boost,Battle Armor,Sturdy,Damp,Limber,Sand Veil,Static,Volt Absorb,Water Absorb,Oblivious,Cloud Nine,Compoundeyes,Insomnia,Color Change,Immunity,Flash Fire,Shield Dust,Own Tempo,Suction Cups,Intimidate,Shadow Tag,Rough Skin,Wonder Guard,Levitate,Effect Spore,Synchronize,Clear Body,Natural Cure,Lightningrod,Serene Grace,Swift Swim,Chlorophyll,Illuminate,Trace,Huge Power,Poison Point,Inner Focus,Magma Armor,Water Veil,Magnet Pull,Soundproof,Rain Dish,Sand Stream,Pressure,Thick Fat,Ea [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enItems">
+            <summary>
+              Looks up a localized string similar to None,Master Ball,Ultra Ball,Great Ball,Poké Ball,Safari Ball,Net Ball,Dive Ball,Nest Ball,Repeat Ball,Timer Ball,Luxury Ball,Premier Ball,Dusk Ball,Heal Ball,Quick Ball,Cherish Ball,Potion,Antidote,Burn Heal,Ice Heal,Awakening,Parlyz Heal,Full Restore,Max Potion,Hyper Potion,Super Potion,Full Heal,Revive,Max Revive,Fresh Water,Soda Pop,Lemonade,Moomoo Milk,EnergyPowder,Energy Root,Heal Powder,Revival Herb,Ether,Max Ether,Elixir,Max Elixir,Lava Cookie,Berry Juice,Sacred Ash,HP Up,Protein,Iron,Carbos,Calcium, [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enLanguages">
+            <summary>
+              Looks up a localized string similar to Japan,English,French,Italian,German,Spanish,Korean.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enLocations">
+            <summary>
+              Looks up a localized string similar to ,Mystery Zone,Nuvema Town,Accumula Town,Striaton City,Nacrene City,Castelia City,Nimbasa City,Driftveil City,Mistralton City,Icirrus City,Opelucid City,Route 1,Route 2,Route 3,Route 4,Route 5,Route 6,Route 7,Route 8,Route 9,Route 10,Route 11,Route 12,Route 13,Route 14,Route 15,Route 16,Route 17,Route 18,Dreamyard,Pinwheel Forest,Desert Resort,Relic Castle,Cold Storage/PWT,Chargestone Cave,Twist Mountain,Dragonspiral Tower,Victory Road,Lacunosa Town,Undella Town,Anville Town,Pokémon League,N&apos;s Castle,Royal U [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enMoves">
+            <summary>
+              Looks up a localized string similar to None,Pound,Karate Chop,DoubleSlap,Comet Punch,Mega Punch,Pay Day,Fire Punch,Ice Punch,ThunderPunch,Scratch,ViceGrip,Guillotine,Razor Wind,Swords Dance,Cut,Gust,Wing Attack,Whirlwind,Fly,Bind,Slam,Vine Whip,Stomp,Double Kick,Mega Kick,Jump Kick,Rolling Kick,Sand-Attack,Headbutt,Horn Attack,Fury Attack,Horn Drill,Tackle,Body Slam,Wrap,Take Down,Thrash,Double-Edge,Tail Whip,Poison Sting,Twineedle,Pin Missile,Leer,Bite,Growl,Roar,Sing,Supersonic,SonicBoom,Disable,Acid,Ember,Flamethrower,Mist,Water Gun,Hydro Pum [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enNatures">
+            <summary>
+              Looks up a localized string similar to Hardy,Lonely,Brave,Adamant,Naughty,Bold,Docile,Relaxed,Impish,Lax,Timid,Hasty,Serious,Jolly,Naive,Modest,Mild,Quiet,Bashful,Rash,Calm,Gentle,Sassy,Careful,Quirky.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enSpecies">
+            <summary>
+              Looks up a localized string similar to None,Bulbasaur,Ivysaur,Venusaur,Charmander,Charmeleon,Charizard,Squirtle,Wartortle,Blastoise,Caterpie,Metapod,Butterfree,Weedle,Kakuna,Beedrill,Pidgey,Pidgeotto,Pidgeot,Rattata,Raticate,Spearow,Fearow,Ekans,Arbok,Pikachu,Raichu,Sandshrew,Sandslash,Nidoran♀,Nidorina,Nidoqueen,Nidoran♂,Nidorino,Nidoking,Clefairy,Clefable,Vulpix,Ninetales,Jigglypuff,Wigglytuff,Zubat,Golbat,Oddish,Gloom,Vileplume,Paras,Parasect,Venonat,Venomoth,Diglett,Dugtrio,Meowth,Persian,Psyduck,Golduck,Mankey,Primeape,Growlithe,Arcanine,Po [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.enVersions">
+            <summary>
+              Looks up a localized string similar to Black,Black 2,Colosseum/XD,Diamond,Emerald,Fire Red,Heart Gold,Leaf Green,Pearl,Platinum,Ruby,Sapphire,Soul Silver,White,White 2.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frAbilities">
+            <summary>
+              Looks up a localized string similar to Aucune,Puanteur,Crachin,Turbo,Armubaston,Fermeté,Moiteur,Échauffement,Voile Sable,Statik,Absorb Volt,Absorb Eau,Benêt,Ciel Gris,Œuil Composé,Insomnia,Déguisement,Vaccin,Torche,Écran Poudre,Tempo Perso,Ventouse,Intimidation,Marque Ombre,Peau Dure,Garde Mystik,Lévitation,Pose Spore,Synchro,Corps Sain,Médic Nature,Paratonnerre,Sérénité,Glissade,Chlorophyle,Lumiattirance,Calque,Colorforce,Point Poison,Attention,Armumagma,Ignifu-Voile,Magnépiège,Anti-Bruit,Cuvette,Sable Volant,Pression,Isograisse,Matinal,Corps A [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frItems">
+            <summary>
+              Looks up a localized string similar to Aucun,Master Ball,Hyper Ball,Super Ball,Poké Ball,Safari Ball,Filet Ball,Scuba Ball,Faiblo Ball,Bis Ball,Chrono Ball,Luxe Ball,Honor Ball,Sombre Ball,Soin Ball,Rapide Ball,Mémoire Ball,Potion,Antidote,Anti-Brûle,Antigel,Réveil,Anti-Para,Guérison,Max Potion,Hyper Potion,Super Potion,Total Soin,Rappel,Rappel Max,Eau Fraiche,Soda Cool,Limonade,Lait Meumeu,Poudrenergie,Racinergie,Poudre Soin,Herbe Rappel,Huile,Huile Max,Elixir,Max Elixir,Lava Cookie,Jus de Baie,Cendre Sacrée,PV Plus,Protéine,Fer,Carbone,Calcium [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frLanguages">
+            <summary>
+              Looks up a localized string similar to Japonais,Anglais,Français,Italien,Allemand,Espagnol,Coréen.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frLocations">
+            <summary>
+              Looks up a localized string similar to ,Endroit Mystérieux,Renouet,Arabelle,Ogoesse,Maillard,Volucité,Méanville,Port Yoneuve,Parsemille,Flocombe,Janusia,Route 1,Route 2,Route 3,Route 4,Route 5,Route 6,Route 7,Route 8,Route 9,Route 10,Route 11,Route 12,Route 13,Route 14,Route 15,Route 16,Route 17,Route 18,Vestiges du Rêve,Forêt d&apos;Empoigne,Désert Délassant,Château Enfoui,Hangar Frigorifique/PWT,Grotte Électrolithe,Mont Foré,Tour Dragospire,Route Victoire,Entrelasque,Vaguelone,Rotombourg,Ligue Pokémon,Palais de N,Étoile d&apos;Unys,Renouet,Métro de Comb [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frMoves">
+            <summary>
+              Looks up a localized string similar to Aucune,Écras&apos;Face,Poing-Karaté,Torgnoles,Poing Comète,Ultimapoing,Jackpot,Poing de Feu,Poing-Glace,Poing-Éclair,Griffe,Force Poigne,Guillotine,Coup-Vent,Danse-Lames,Coupe,Tornade,Cru-Aile,Cyclone,Vol,Étreinte,Souplesse,Fouet Lianes,Écrasement,Double-Pied,Ultimawashi,Pied Sauté,Mawashi Geri,Jet de Sable,Coup d&apos;Boule,Koud&apos;Korne,Furie,Empal&apos;Korne,Charge,Plaquage,Ligotage,Bélier,Mania,Damoclès,Mimi-queue,Dard-Venin,Double-Dard,Dard-Nuée,Groz&apos;Yeux,Morsure,Rugissement,Hurlement,Berceuse,Ultrason,Sonicboom,Entrave [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frNatures">
+            <summary>
+              Looks up a localized string similar to Hardi,Solo,Brave,Rigide,Mauvais,Assuré,Docile,Relax,Malin,Lâche,Timide,Pressé,Sérieux,Jovial,Naïf,Modeste,Doux,Discret,Pudique,Foufou,Calme,Gentil,Malpoli,Prudent,Bizarre.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frSpecies">
+            <summary>
+              Looks up a localized string similar to Aucun,Bulbizarre,Herbizarre,Florizarre,Salamèche,Reptincel,Dracaufeu,Carapuce,Carabaffe,Tortank,Chenipan,Chrysacier,Papilusion,Aspicot,Coconfort,Dardagnan,Roucoul,Roucoups,Roucarnage,Rattata,Rattatac,Piafabec,Rapasdepic,Abo,Arbok,Pikachu,Raichu,Sabelette,Sablaireau,Nidoran♀,Nidorina,Nidoqueen,Nidoran♂,Nidorino,Nidoking,Mélofée,Mélodelfe,Goupix,Feunard,Rondoudou,Grodoudou,Nosférapti,Nosféralto,Mystherbe,Ortide,Rafflésia,Paras,Parasect,Mimitoss,Aéromite,Taupiqueur,Triopikeur,Miaouss,Persian,Psykokwak,Akwakwak [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.frVersions">
+            <summary>
+              Looks up a localized string similar to Noire,Noire 2,Colosseum/XD,Diamant,Émeraude,Rouge Feu,Or HeartGold,Vert Feuille,Perle,Platine,Rubis,Saphir,Argent SoulSilver,Blanche,Blanche 2.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grAbilities">
+            <summary>
+              Looks up a localized string similar to Anpassung,Finalschlag,Klimaschutz,Analyse,Kurzschluss,Vorahnung,Ausweglos,Alptraum,Kampfpanzer,Brustbieter,Großbrand,Chlorophyll,Neutraltorso,Wolke Sieben,Farbwechsel,Facettenauge,Umkehrung,Tastfluch,Charmebolzen,Feuchtigkeit,Schwächling,Siegeswille,Download,Niesel,Dürre,Trockenheit,Frühwecker,Sporenwirt,Filter,Flammkörper,Hitzewahn,Feuerfänger,Pflanzengabe,Prognose,Vorwarnung,Freundeshut,Schnüffler,Völlerei,Adrenalin,Reiche Ernte,Heilherz,Hitzeschutz,Schwermetall,Honigmaul,Kraftkoloss,Übereifer,Hydration,S [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grItems">
+            <summary>
+              Looks up a localized string similar to -,Meisterball,Hyperball,Superball,Pokéball,Safariball,Netzball,Tauchball,Nestball,Wiederball,Timerball,Luxusball,Premierball,Finsterball,Heilball,Flottball,Jubelball,Trank,Gegengift,Feuerheiler,Eisheiler,Aufwecker,Para-Heiler,Top-Genesung,Top-Trank,Hypertrank,Supertrank,Hyperheiler,Beleber,Top-Beleber,Tafelwasser,Sprudel,Limonade,Kuhmuh-Milch,Energiestaub,Kraftwurzel,Heilpuder,Vitalkraut,Äther,Top-Äther,Elixier,Top-Elixier,Lavakeks,Beerensaft,Zauberasche,KP-Plus,Protein,Eisen,Carbon,Kalzium,Sonderbonbon,AP- [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grLanguages">
+            <summary>
+              Looks up a localized string similar to Japanisch,English,Französisch,Italienisch,Deutsch,Spanish,Koreanisch.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grLocations">
+            <summary>
+              Looks up a localized string similar to Mysteriöse Zone,Avenitia,Gavina,Orion City,Septerna City,Stratos City,Rayono City,Marea City,Panaero City,Nevaio City,Twindrake City,Route 1,Route 2,Route 3,Route 4,Route 5,Route 6,Route 7,Route 8,Route 9,Route 10,Route 11,Route 12,Route 13,Route 14,Route 15,Route 16,Route 17,Route 18,Traumbrache,Ewigenwald,Wüstenresort,Alter Palast,Tiefkühlcontainer/PWT,Elektrolithhöhle,Wendelberg,Drachenstiege,Siegesstraße,Tessera,Ondula,Ferrula,Pokémon Liga,Schloss von N,MS Einall Royal,Avenitia,Kampfmetro,Pokémon Musikt [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grMoves">
+            <summary>
+              Looks up a localized string similar to -,Pfund,Karateschlag,Duplexhieb,Kometenhieb,Megahieb,Zahltag,Feuerschlag,Eishieb,Donnerschlag,Kratzer,Klammer,Guillotine,Klingensturm,Schwerttanz,Zerschneider,Windstoß,Flügelschlag,Wirbelwind,Fliegen,Klammergriff,Slam,Rankenhieb,Stampfer,Doppelkick,Megakick,Sprungkick,Fegekick,Sandwirbel,Kopfnuss,Hornattacke,Furienschlag,Hornbohrer,Tackle,Bodyslam,Wickel,Bodycheck,Fuchtler,Risikotackle,Rutenschlag,Giftstachel,Duonadel,Nadelrakete,Silberblick,Biss,Heuler,Brüller,Gesang,Superschall,Ultraschall,Aussetzer,Säure [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grNatures">
+            <summary>
+              Looks up a localized string similar to Robust,Solo,Mutig,Hart,Frech,Kühn,Sanft,Locker,Pfiffig,Lasch,Scheu,Hastig,Ernst,Froh,Naiv,Mäßig,Mild,Ruhig,Zaghaft,Hitzig,Still,Zart,Forsch,Sacht,Kauzig.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grSpecies">
+            <summary>
+              Looks up a localized string similar to -,Bisasam,Bisaknosp,Bisaflor,Glumanda,Glutexo,Glurak,Schiggy,Schillok,Turtok,Raupy,Safcon,Smettbo,Hornliu,Kokuna,Bibor,Taubsi,Tauboga,Tauboss,Rattfratz,Rattikarl,Habitak,Ibitak,Rettan,Arbok,Pikachu,Raichu,Sandan,Sandama,Nidoran♀,Nidorina,Nidoqueen,Nidoran♂,Nidorino,Nidoking,Piepi,Pixi,Vulpix,Vulnona,Pummeluff,Knuddeluff,Zubat,Golbat,Myrapla,Duflor,Giflor,Paras,Parasect,Bluzuk,Omot,Digda,Digdri,Mauzi,Snobilikat,Enton,Entoron,Menki,Rasaff,Fukano,Arkani,Quapsel,Quaputzi,Quappo,Abra,Kadabra,Simsala,Machollo,Mas [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.grVersions">
+            <summary>
+              Looks up a localized string similar to Schwarz,Schwarz 2,Colosseum/XD,Diamant,Smaragd,Feuerrot,Heart Gold,Blattgrün,Perl,Platin,Rubin,Saphir,Soul Silver,Weiß,Weiß 2.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.krAbilities">
+            <summary>
+              Looks up a localized string similar to 적응력,유폭,에어록,애널라이즈,분노의경혈,위험예지,개미지옥,나이트메어,전투무장,부풀린가슴,맹화,엽록소,클리어바디,날씨부정,변색,복안,심술꾸러기,저주받은바디,헤롱헤롱바디,습기,무기력,오기,다운로드,잔비,가뭄,건조피부,일찍기상,포자,필터,불꽃몸,열폭주,타오르는불꽃,플라워기프트,기분파,예지몽,프렌드가드,통찰,먹보,근성,수확,치유의마음,내열,헤비메탈,꿀모으기,천하장사,의욕,촉촉바디,괴력집게,아이스바디,발광,일루전,면역,괴짜,틈새포착,정신력,불면,위협,철가시,철주먹,정의의마음,날카로운눈,서투름,리프가드,부유,라이트메탈,피뢰침,유연,해감액,매직미러,매직가드,마그마의무장,자력,이상한비늘,마이너스,틀깨기,변덕쟁이,전기엔진,자기과신,멀티스케일,멀티타입,미라,자연회복,노가드,없음,노말스킨,둔감,방진,심록,마이페이스,나쁜손버릇,픽업,플러스,포이즌힐,독가시,독수,짓궂은마음,프레셔,순수한힘,속보,젖은접시,주눅,이판사판,재생력,투쟁심,돌머리,까칠한피부,도주,모래의힘,모래헤치기,모래날림,모래숨기,초식,배짱,하늘의은총,그림자밟기,탈 [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.krItems">
+            <summary>
+              Looks up a localized string similar to 없음,마스터볼,하이퍼볼,수퍼볼,몬스터볼,사파리볼,네트볼,다이브볼,네스트볼,리피트볼,타이머볼,럭셔리볼,프리미어볼,다크볼,힐볼,퀵볼,프레셔스볼,상처약,해독제,화상치료제,얼음상태치료제,잠깨는약,마비치료제,회복약,풀회복약,고급상처약,좋은상처약,만병통치제,기력의조각,기력의덩어리,맛있는물,미네랄사이다,후르츠밀크,튼튼밀크,힘의가루,힘의뿌리,만능가루,부활초,PP에이드,PP회복,PP에이더,PP맥스,용암전병,나무열매쥬스,성스러운분말,맥스업,타우린,사포닌,알칼로이드,리보플라빈,이상한사탕,포인트업,키토산,포인트맥스,숲의양갱,이펙트가드,크리티컬커터,플러스파워,디펜드업,스피드업,잘-맞히기,스페셜업,스페셜가드,삐삐인형,에나비꼬리,파랑비드로,노랑비드로,빨강비드로,검정비드로,하양비드로,여울소금,여울조개껍질,빨강조각,파랑조각,노랑조각,초록조각,실버스프레이,골드스프레이,동굴탈출로프,벌레회피스프레이,태양의돌,달의돌,불꽃의돌,천둥의돌,물의돌,리프의돌,작은버섯,큰버섯,진주,큰진주,별의모래,별의조각,금구슬,하트비늘,달콤한꿀,무럭무럭비료,축축이비 [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.krLocations">
+            <summary>
+              Looks up a localized string similar to 수수께끼의 장소,마름꽃마을,넝쿨마을,성신시티,칠보시티,구름시티,뇌문시티,물풍경시티,궐수시티,설화시티,쌍용시티,1번도로,2번도로,3번도로,4번도로,5번도로,6번도로,7번도로,8번도로,9번도로,10번도로,11번도로,12번도로,13번도로,14번도로,15번도로,16번도로,17번도로,18번도로,꿈터,바람개비숲,리조트데저트,고대의 성,냉동컨테이너,전기돌동굴,태엽산,용나선탑,챔피언로드,보배마을,물결마을,가륜마을,포켓몬리그,N의 성,로얄하나호,마름꽃마을,배틀서브웨이,뮤지컬회장,블랙시티,화이트포리스트,유나이티드 타워,지하수맥굴,궐수의 동굴,사색의 들판,타워오브헤븐,설화의 습지초원,쇼핑몰R9,수행의 바위동굴,시프트팩토리,자이언트홀,리버티 가든,원더 브리지,P2랩,스카이애로 브리지,물풍경도개교,실린더 브리지,빌리지 브리지,하일링크,풍요의 사당,물결만,미혹의 숲,시련의 석굴,길잡이의 공간,하일링크의 숲,뇌문시티 (2),물풍경시티 (2),궐수시티 (2),설화시티 (2),쌍용시티,마름꽃마을,화이트포리스트 (2),블랙시티 (2), [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.krMoves">
+            <summary>
+              Looks up a localized string similar to 없음,막치기,태권당수,연속뺨치기,연속펀치,메가톤펀치,고양이돈받기,불꽃펀치,냉동펀치,번개펀치,할퀴기,찝기,가위자르기,칼바람,칼춤,풀베기,바람일으키기,날개치기,날려버리기,공중날기,조이기,힘껏치기,덩굴채찍,짓밟기,두번치기,메가톤킥,점프킥,돌려차기,모래뿌리기,박치기,뿔찌르기,마구찌르기,뿔드릴,몸통박치기,누르기,김밥말이,돌진,난동부리기,이판사판태클,꼬리흔들기,독침,더블니들,바늘미사일,째려보기,물기,울음소리,울부짖기,노래하기,초음파,소닉붐,사슬묶기,용해액,불꽃세례,화염방사,흰안개,물대포,하이드로펌프,파도타기,냉동빔,눈보라,환상빔,거품광선,오로라빔,파괴광선,쪼기,회전부리,지옥의바퀴,안다리걸기,카운터,지구던지기,괴력,흡수,메가드레인,씨뿌리기,성장,잎날가르기,솔라빔,독가루,마비가루,수면가루,꽃잎댄스,실뿜기,용의분노,회오리불꽃,전기쇼크,10만볼트,전기자석파,번개,돌떨구기,지진,땅가르기,구멍파기,맹독,염동력,사이코키네시스,최면술,요가포즈,고속이동,전광석화,분노,순간이동,나이트헤드,흉내내기,싫은소리,그림자분신,HP회복,단단해 [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.krNatures">
+             <summary>
+               Looks up a localized string similar to 노력,외로움,용감,고집,개구쟁이,대담,온순,무사태평,장난꾸러기,촐랑,겁쟁이,성급,성실,명랑,천진난만,조심,의젓,냉정,수줍음,덜렁,차분,얌전,건방,신중,변덕
+            .
+             </summary>
+        </member>
+        <member name="P:Pikaedit_Lib.Properties.Resources.krSpecies">
+            <summary>
+              Looks up a localized string similar to 없음,이상해씨,이상해풀,이상해꽃,파이리,리자드,리자몽,꼬부기,어니부기,거북왕,캐터피,단데기,버터플,뿔충이,딱충이,독침붕,구구,피죤,피죤투,꼬렛,레트라,깨비참,깨비드릴조,아보,아보크,피카츄,라이츄,모래두지,고지,니드런♀,니드리나,니드퀸,니드런♂,니드리노,니드킹,삐삐,픽시,식스테일,나인테일,푸린,푸크린,주뱃,골뱃,뚜벅쵸,냄새꼬,라플레시아,파라스,파라섹트,콘팡,도나리,디그다,닥트리오,나옹,페르시온,고라파덕,골덕,망키,성원숭,가디,윈디,발챙이,슈륙챙이,강챙이,캐이시,윤겔라,후딘,알통몬,근육몬,괴력몬,모다피,우츠동,우츠보트,왕눈해,독파리,꼬마돌,데구리,딱구리,포니타,날쌩마,야돈,야도란,코일,레어코일,파오리,두두,두트리오,쥬쥬,쥬레곤,질퍽이,질뻐기,셀러,파르셀,고오스,고우스트,팬텀,롱스톤,슬리프,슬리퍼,크랩,킹크랩,찌리리공,붐볼,아라리,나시,탕구리,텅구리,시라소몬,홍수몬,내루미,또가스,또도가스,뿔카노,코뿌리,럭키,덩쿠리,캥카,쏘드라,시드라,콘치,왕콘치,별가사리,아쿠스타,마임맨,스라크,루주라,에레브,마그마,쁘사이저, [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.RibbonSet">
+            <summary>
+            Represents a Ribbon structure ushort from the pkm data
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.RibbonSet.setChanges(System.Boolean[])">
+            <summary>
+            Set flags and calculate data value
+            </summary>
+            <param name="flags">bool[] containing which ribbons are active</param>
+        </member>
+        <member name="M:Pikaedit_Lib.RibbonSet.getFlags">
+            <summary>
+            Get Ribbon flags from the data value
+            </summary>
+            <returns>bool[] representing which bits are active</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.SaveFile">
+            <summary>
+            Represents a Gen 5 save file
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.filename">
+            <summary>
+            Save file File to access using FileStream
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.extension">
+            <summary>
+            Save file extension
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.data">
+            <summary>
+            Original save file data
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.party">
+            <summary>
+            Represents save file Party as a Pokemon[]
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.boxes">
+            <summary>
+            Represents save file Boxes
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.battleBox">
+            <summary>
+            Represents save file Battle Box as a Pokemon[]
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.daycare">
+            <summary>
+            Represents save file Day-Care data
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.trainer">
+            <summary>
+            Represents save file Trainer Info
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.fused">
+            <summary>
+            Represents BW2 Reshiram/Zekrom storage when fused with Kyurem
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.version">
+            <summary>
+            Represents save file Version
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.SaveFile.wonderCards">
+            <summary>
+            Represents Wonder Cards stored in the save file
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.srand(System.UInt32)">
+            <summary>
+            Initialize seed
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.rand">
+            <summary>
+            Call the next RNG
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.prand">
+            <summary>
+            Call the previous RNG
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.GetCheckSum(System.Byte[])">
+            <summary>
+            Generate the ushort checksum of a byte[] block
+            </summary>
+            <param name="data">Block to get checksum as byte[]</param>
+            <returns>Checksum generated from given byte[] block</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.#ctor">
+            <summary>
+            Initialize an empty save file (Do not use to create a save file)
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.#ctor(System.String)">
+            <summary>
+            Initialize a Save file using an existing save file
+            </summary>
+            <param name="filename">File name of the save file</param>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.#ctor(System.Byte[])">
+            <summary>
+            Initialize a Save file using a byte[] representing a save file data
+            </summary>
+            <param name="data">A byte[] representing a save file data</param>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.save(System.String,System.Byte)">
+            <summary>
+            Saves the edited save file
+            </summary>
+            <param name="filename">filename for the save file to save</param>
+            <param name="type">0 = .sav, 1 = .dsv</param>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.getSavedData">
+            <summary>
+            Saves the save file and gets the byte[] of the new save file
+            </summary>
+            <returns>byte[] of the saved save file</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.SaveFile.getBoxesNames">
+            <summary>
+            Return a string[] containing all boxes names
+            </summary>
+            <returns>string[] with all save file boxes names</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.SaveFile.Version">
+            <summary>
+            Save file version
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.SaveFile.FileExtension">
+            <summary>
+            Save file extension
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.TrainerInfo">
+            <summary>
+            Contains Save file Trainer Data
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.NAMEMAXLENGTH">
+            <summary>
+            Maximum character length for trainer name
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.name">
+            <summary>
+            Trainer name
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.id">
+            <summary>
+            Trainer ID
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.sid">
+            <summary>
+            Trainer Secret ID
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.money">
+            <summary>
+            Trainer's money
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.gender">
+            <summary>
+            Trainer's gender
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.badges">
+            <summary>
+            Obtained badges as byte, each bit represents a badge
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.playHours">
+            <summary>
+            Playtime hours
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.playMin">
+            <summary>
+            Playtime minutes
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.TrainerInfo.playSec">
+            <summary>
+            Playtime seconds
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.TrainerInfo.#ctor(System.String,System.UInt16,System.UInt16,System.UInt32,System.Byte,System.Byte,System.UInt16,System.Byte,System.Byte)">
+            <summary>
+            Initialize TrainerInfo object
+            </summary>
+            <param name="name">Trainer name</param>
+            <param name="id">Trainer ID</param>
+            <param name="sid">Trainer SID</param>
+            <param name="money">Money held</param>
+            <param name="gender">Trainer gender</param>
+            <param name="badges">Current badges</param>
+            <param name="playHours">Playtime hours (Max 999)</param>
+            <param name="playMin">Playtime minutes (Max 59)</param>
+            <param name="playSec">Playtime seconds (Max 59)</param>
+        </member>
+        <member name="M:Pikaedit_Lib.TrainerInfo.getName">
+            <summary>
+            Get Trainer name as byte array
+            </summary>
+            <returns>byte[] containing trainer name</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.TrainerInfo.getGenderByte">
+            <summary>
+            Get Trainer gender represented as a byte
+            </summary>
+            <returns>0 if Trainer gender is male, 1 if it is female</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.TrainerInfo.getBadgesObtained">
+            <summary>
+            Get badges obtained
+            </summary>
+            <returns>bool[] indicating which badges have been obtained and which not</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.TrainerInfo.badgeCount">
+            <summary>
+            Get badges obtained count
+            </summary>
+            <returns>Number of badges obtained</returns>
+        </member>
+        <member name="M:Pikaedit_Lib.TrainerInfo.setBadges(System.Boolean[])">
+            <summary>
+            Set the badges byte using a bool[]
+            </summary>
+            <param name="b">Badges flags</param>
+        </member>
+        <member name="T:Pikaedit_Lib.TrainerInfo.TrainerGender">
+            <summary>
+            Represents trainer gender
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.WonderCard">
+            <summary>
+            Represents a save file WonderCard
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.data">
+            <summary>
+            Wonder Card byte[] in the save file decrypted
+            </summary>
+        </member>
+        <member name="M:Pikaedit_Lib.WonderCard.getLog">
+            <summary>
+            Get Wonder Card data as a string[] log
+            </summary>
+            <returns>string[] log containing Wonder Card data</returns>
+        </member>
+        <member name="T:Pikaedit_Lib.WonderCard.CardType">
+            <summary>
+            Represents Card Type, what will the player will receive
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.CardType.Power">
+            <summary>
+            Pass Power
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.WonderCard.Ability">
+            <summary>
+            Represents the ability index the pokemon will have or can have
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Ability.Ability_0">
+            <summary>
+            Pokemon will have ability 0
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Ability.Ability_1">
+            <summary>
+            Pokemon will have ability 1
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Ability.HA">
+            <summary>
+            Pokemon will have hidden ability
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Ability.Random">
+            <summary>
+            Pokemon can have ability 0 or 1, but not HA
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Ability.Random_HA">
+            <summary>
+            Pokemon can have ability 0, 1 or HA
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.WonderCard.Shininess">
+            <summary>
+            Represents the shininess of the pokemon the Wonder Card has if PID is random
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Shininess.Never">
+            <summary>
+            The Pokemon will never be shiny
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Shininess.Possible">
+            <summary>
+            The pokemon can be shiny
+            </summary>
+        </member>
+        <member name="F:Pikaedit_Lib.WonderCard.Shininess.Always">
+            <summary>
+            The pokemon will be shiny
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.WonderCard.OTGender">
+            <summary>
+            Represents the OT Gender the pokemon will have
+            </summary>
+        </member>
+        <member name="T:Pikaedit_Lib.WonderCard.Gender">
+            <summary>
+            Represents the Pokemon Gender
+            </summary>
+        </member>
+    </members>
+</doc>

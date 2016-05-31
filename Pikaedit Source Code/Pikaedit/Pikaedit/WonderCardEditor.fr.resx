@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="loadPGF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
+  </data>
+  <data name="loadPGF.Text" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
+  <data name="savePGF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
+  </data>
+  <data name="savePGF.Text" xml:space="preserve">
+    <value>Enregistrer en tant que PGF</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="typePkm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="typePkm.Text" xml:space="preserve">
+    <value>Pokémon</value>
+  </data>
+  <data name="typeItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="typeItem.Text" xml:space="preserve">
+    <value>Objet</value>
+  </data>
+  <data name="typePower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="typePower.Text" xml:space="preserve">
+    <value>Offri-Aura</value>
+  </data>
+  <data name="cardTypeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="cardTypeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Type de Carte</value>
+  </data>
+  <data name="cardLocationBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 113</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>ID de la Carte</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 13</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Date de réception (jj/mm/aaa)</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="cardUsedBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 26</value>
+  </data>
+  <data name="cardUsedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="cardUsedBox.Text" xml:space="preserve">
+    <value>Utilisée</value>
+  </data>
+  <data name="Label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="Label20.Text" xml:space="preserve">
+    <value>Provenance de la Carte</value>
+  </data>
+  <data name="cardIDBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 24</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Offri-Aura à obtenir</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Objet à obtenir</value>
+  </data>
+  <data name="itemPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Données de la Carte</value>
+  </data>
+  <data name="randomPID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="randomPID.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="staticPID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 1</value>
+  </data>
+  <data name="staticPID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="staticPID.Text" xml:space="preserve">
+    <value>Statique</value>
+  </data>
+  <data name="alwaysShiny.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="alwaysShiny.Text" xml:space="preserve">
+    <value>Toujours Chromatique</value>
+  </data>
+  <data name="possibleShiny.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="possibleShiny.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="neverShiny.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 17</value>
+  </data>
+  <data name="neverShiny.Text" xml:space="preserve">
+    <value>Jamais Chromatique</value>
+  </data>
+  <data name="GroupBox3.Text" xml:space="preserve">
+    <value>Options du PID</value>
+  </data>
+  <data name="isEggBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 17</value>
+  </data>
+  <data name="isEggBox.Text" xml:space="preserve">
+    <value>Œuf</value>
+  </data>
+  <data name="versionBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 225</value>
+  </data>
+  <data name="versionBox.Text" xml:space="preserve">
+    <value>Version du jeu</value>
+  </data>
+  <data name="speciesBox.Text" xml:space="preserve">
+    <value>Bulbizarre</value>
+  </data>
+  <data name="itemBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 87</value>
+  </data>
+  <data name="itemBox.Text" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="languageBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 198</value>
+  </data>
+  <data name="languageBox.Text" xml:space="preserve">
+    <value>Langue du jeu</value>
+  </data>
+  <data name="natureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 171</value>
+  </data>
+  <data name="natureBox.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="genderBox.Items" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="genderBox.Items1" xml:space="preserve">
+    <value>Mâle</value>
+  </data>
+  <data name="genderBox.Items2" xml:space="preserve">
+    <value>Femelle</value>
+  </data>
+  <data name="genderBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 116</value>
+  </data>
+  <data name="genderBox.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="abilityBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 144</value>
+  </data>
+  <data name="abilityBox.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="formBox.Items" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="formBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 251</value>
+  </data>
+  <data name="formBox.Text" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 228</value>
+  </data>
+  <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 11</value>
+  </data>
+  <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 38</value>
+  </data>
+  <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>Espèce</value>
+  </data>
+  <data name="Label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 90</value>
+  </data>
+  <data name="Label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>Objet tenu</value>
+  </data>
+  <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 64</value>
+  </data>
+  <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>Surnom</value>
+  </data>
+  <data name="isNickBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
+  </data>
+  <data name="isNickBox.Text" xml:space="preserve">
+    <value>Surnommé</value>
+  </data>
+  <data name="levelBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 35</value>
+  </data>
+  <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>Sexe</value>
+  </data>
+  <data name="Label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 201</value>
+  </data>
+  <data name="Label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="Label19.Text" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 174</value>
+  </data>
+  <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 146</value>
+  </data>
+  <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>Talent</value>
+  </data>
+  <data name="Label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="Label15.Text" xml:space="preserve">
+    <value>Niveau</value>
+  </data>
+  <data name="Label45.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 254</value>
+  </data>
+  <data name="Label45.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="Label45.Text" xml:space="preserve">
+    <value>Forme</value>
+  </data>
+  <data name="TabPage4.Text" xml:space="preserve">
+    <value>Infos</value>
+  </data>
+  <data name="Label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 13</value>
+  </data>
+  <data name="Label22.Text" xml:space="preserve">
+    <value>PV</value>
+  </data>
+  <data name="Label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="Label23.Text" xml:space="preserve">
+    <value>Attaque</value>
+  </data>
+  <data name="Label25.Text" xml:space="preserve">
+    <value>Défense</value>
+  </data>
+  <data name="Label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="Label24.Text" xml:space="preserve">
+    <value>Attaque Spé.</value>
+  </data>
+  <data name="Label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="Label27.Text" xml:space="preserve">
+    <value>Défense Spé.</value>
+  </data>
+  <data name="Label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="Label26.Text" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="randomSpe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="randomSpe.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="randomSpd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="randomSpd.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="randomSpa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="randomSpa.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="randomDef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="randomDef.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="randomAtk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="randomAtk.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="randomHP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="randomHP.Text" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>Statistiques</value>
+  </data>
+  <data name="Label29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="Label29.Text" xml:space="preserve">
+    <value>Capacités</value>
+  </data>
+  <data name="levelupMoves.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 19</value>
+  </data>
+  <data name="levelupMoves.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 17</value>
+  </data>
+  <data name="levelupMoves.Text" xml:space="preserve">
+    <value>Utilisé les Capacités apprises par Niveau</value>
+  </data>
+  <data name="move2Box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 72</value>
+  </data>
+  <data name="move2Box.Text" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="move1Box.Text" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="move3Box.Text" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="move4Box.Text" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="TabPage2.Text" xml:space="preserve">
+    <value>Capacités</value>
+  </data>
+  <data name="locationHatchedBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 167</value>
+  </data>
+  <data name="Label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 170</value>
+  </data>
+  <data name="Label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="Label18.Text" xml:space="preserve">
+    <value>Lieu d'obtention de l'Œuf</value>
+  </data>
+  <data name="Label34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 20</value>
+  </data>
+  <data name="Label34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="Label34.Text" xml:space="preserve">
+    <value>DO</value>
+  </data>
+  <data name="femaleOT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 62</value>
+  </data>
+  <data name="femaleOT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="femaleOT.Text" xml:space="preserve">
+    <value>Femelle</value>
+  </data>
+  <data name="maleOT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 39</value>
+  </data>
+  <data name="maleOT.Text" xml:space="preserve">
+    <value>Mâle</value>
+  </data>
+  <data name="Label39.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 20</value>
+  </data>
+  <data name="Label39.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="Label39.Text" xml:space="preserve">
+    <value>Sexe du DO</value>
+  </data>
+  <data name="locationMetBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 140</value>
+  </data>
+  <data name="gamegenderOT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 85</value>
+  </data>
+  <data name="gamegenderOT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 17</value>
+  </data>
+  <data name="gamegenderOT.Text" xml:space="preserve">
+    <value>Sexe du Joueur</value>
+  </data>
+  <data name="useGameOT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="useGameOT.Text" xml:space="preserve">
+    <value>DO du Joueur</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 46</value>
+  </data>
+  <data name="idBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 43</value>
+  </data>
+  <data name="pokeballBox.Items1" xml:space="preserve">
+    <value>Super Ball</value>
+  </data>
+  <data name="pokeballBox.Items2" xml:space="preserve">
+    <value>Hyper Ball</value>
+  </data>
+  <data name="pokeballBox.Items5" xml:space="preserve">
+    <value>Filet Ball</value>
+  </data>
+  <data name="pokeballBox.Items6" xml:space="preserve">
+    <value>Scuba Ball</value>
+  </data>
+  <data name="pokeballBox.Items7" xml:space="preserve">
+    <value>Faiblo Ball</value>
+  </data>
+  <data name="pokeballBox.Items8" xml:space="preserve">
+    <value>Bis Ball</value>
+  </data>
+  <data name="pokeballBox.Items9" xml:space="preserve">
+    <value>Chrono Ball</value>
+  </data>
+  <data name="pokeballBox.Items10" xml:space="preserve">
+    <value>Luxe Ball</value>
+  </data>
+  <data name="pokeballBox.Items11" xml:space="preserve">
+    <value>Honor Ball</value>
+  </data>
+  <data name="pokeballBox.Items12" xml:space="preserve">
+    <value>Sombre Ball</value>
+  </data>
+  <data name="pokeballBox.Items13" xml:space="preserve">
+    <value>Soin Ball</value>
+  </data>
+  <data name="pokeballBox.Items14" xml:space="preserve">
+    <value>Rapide Ball</value>
+  </data>
+  <data name="pokeballBox.Items15" xml:space="preserve">
+    <value>Mémoire Ball</value>
+  </data>
+  <data name="pokeballBox.Items16" xml:space="preserve">
+    <value>Speed Ball</value>
+  </data>
+  <data name="pokeballBox.Items17" xml:space="preserve">
+    <value>Appât Ball</value>
+  </data>
+  <data name="pokeballBox.Items18" xml:space="preserve">
+    <value>Masse Ball</value>
+  </data>
+  <data name="pokeballBox.Items20" xml:space="preserve">
+    <value>Copain Ball</value>
+  </data>
+  <data name="pokeballBox.Items21" xml:space="preserve">
+    <value>Niveau Ball</value>
+  </data>
+  <data name="pokeballBox.Items22" xml:space="preserve">
+    <value>Compét'Ball</value>
+  </data>
+  <data name="pokeballBox.Items23" xml:space="preserve">
+    <value>Rêve Ball</value>
+  </data>
+  <data name="pokeballBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 113</value>
+  </data>
+  <data name="pokeballBox.Text" xml:space="preserve">
+    <value>Mémoire Ball</value>
+  </data>
+  <data name="sidBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 68</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>ID Secret</value>
+  </data>
+  <data name="Label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 143</value>
+  </data>
+  <data name="Label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="Label16.Text" xml:space="preserve">
+    <value>Lieu de Rencontre</value>
+  </data>
+  <data name="Label37.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 116</value>
+  </data>
+  <data name="Label37.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="Label37.Text" xml:space="preserve">
+    <value>Ball de capture</value>
+  </data>
+  <data name="TabPage3.Text" xml:space="preserve">
+    <value>Données</value>
+  </data>
+  <data name="ribbonList.Items" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="ribbonList.Items2" xml:space="preserve">
+    <value>Terre</value>
+  </data>
+  <data name="ribbonList.Items3" xml:space="preserve">
+    <value>Monde</value>
+  </data>
+  <data name="ribbonList.Items4" xml:space="preserve">
+    <value>Classique</value>
+  </data>
+  <data name="ribbonList.Items5" xml:space="preserve">
+    <value>Premier</value>
+  </data>
+  <data name="ribbonList.Items6" xml:space="preserve">
+    <value>Événement</value>
+  </data>
+  <data name="ribbonList.Items7" xml:space="preserve">
+    <value>Anniversaire</value>
+  </data>
+  <data name="ribbonList.Items8" xml:space="preserve">
+    <value>Spécial</value>
+  </data>
+  <data name="ribbonList.Items9" xml:space="preserve">
+    <value>Souvenir</value>
+  </data>
+  <data name="ribbonList.Items10" xml:space="preserve">
+    <value>Souhait</value>
+  </data>
+  <data name="ribbonList.Items11" xml:space="preserve">
+    <value>Champion Battle</value>
+  </data>
+  <data name="ribbonList.Items12" xml:space="preserve">
+    <value>Champion Régional</value>
+  </data>
+  <data name="ribbonList.Items13" xml:space="preserve">
+    <value>Champion National</value>
+  </data>
+  <data name="ribbonList.Items14" xml:space="preserve">
+    <value>Champion Mondial</value>
+  </data>
+  <data name="ribbonList.Items15" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Rubans</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Pokémon</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Éditeur de Carte Miracle</value>
+  </data>
+</root>

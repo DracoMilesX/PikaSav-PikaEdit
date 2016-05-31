@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "pikasav.py", line 1624, in <module>
+  File "pikasav.py", line 748, in __init__
+  File "Tix.pyc", line 225, in __init__
+    vsb             Scrollbarc
+_tkinter.TclError: can't find package Tix

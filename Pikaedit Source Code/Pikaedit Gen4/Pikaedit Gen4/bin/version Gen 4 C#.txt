@@ -1,0 +1,3 @@
+PikaEdit 1.2.3.0
+https://dl.dropboxusercontent.com/s/cy2r3s3ah6n5pvk/Pikaedit%20Gen4%20C%23.exe?dl=1
+Fixed PikaeditLib problems with multiple connections to Veekun's database, making multiple Pikaedit versions be used at the same time (Other Pikaedit versions need to be updated as well)

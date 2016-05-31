@@ -1,0 +1,42 @@
+Beta Test v1.2.2 - 19/4/14 (Current Version)
+Fixed PikaeditLib problems with multiple connections to Veekun's database, making multiple Pikaedit versions be used at the same time (Other Pikaedit versions need to be updated as well)
+
+Beta Test v1.2.2 - 17/4/14
+Fixed Pokemon with alternate forms didn't have stats calculation when saved
+Fixed legal abilities had a problem with alternate forms
+
+Beta Test v1.2.1 - 17/4/14
+Fixed movesets query had a problem that didn't filtered pre evolution moves and egg moves by Gen
+
+Beta Test v1.2 - 14/4/14
+Updated PikaeditLib with Veekun open source database support
+Updated PikaeditLib.dll is now merged into the exe file
+Added Legal/Hack mode editor
+Added in Legal mode, movesets will be updated depending on the Pokemon data and now loads moves that can be learned depending on level
+Added Moveset Analysis (will display if the move is legal or not)
+Added Max PP and Random IV tools
+Added Ability Index will set the legal ability corresponding to the selected index (even when using Hack mode editor)
+Fixed PP will be updated after changing moves and increasing PP Up's
+Fixed PP Up limit wasn't set
+Updated Pokerus editor changed to strain/days system from Pikaedit Gen 5
+Updated Settings saving to save editor mode and has been modified to allow new settings
+Removed DW from the Ability index combobox
+
+Beta Test v1.1.1 - 11/4/14
+Added Plugin system support, develop and/or run plugins that expand Pikaedit features!
+Added nature stat increase and decrease in the Stats tab with orange color for boosted stat and blue for lowered stat
+Fixed Pokeball list bug
+
+Beta Test v1.1
+Added Day Care Pokemon under the Save File tab
+Added Trainer Info editor with name, ID/SID, gender, Money and badge editor
+Added Save File Info list on the Save File tab gives Trainer Info data preview
+Fixed pkm OT max length was 8 instead of 7
+Fixed when Pikaedit started OT characters were wrong and Shiny Leaves A and B were enabled
+
+Beta Test v1.0
+Revamped Pikaedit Gen 4 with Gen 4 pkm editor and save file editor
+Language changing isn't enabled, cleaning Gen 5 data required on other languages
+Box name changing isn't enabled
+PID Generator hasn't been implemented (Gen 4 methods)
+Save File tab gives some data about the loaded Save file

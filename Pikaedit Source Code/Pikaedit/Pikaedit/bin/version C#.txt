@@ -1,0 +1,4 @@
+PikaEdit 1.9.3.0
+https://dl.dropboxusercontent.com/s/vswmdxgdhyojsgd/Pikaedit%20C%23.exe?dl=1
+Added DLC editor (C-Gear/Pokedex Skins and Musical Data injection/extraction)
+Fixed PikaeditLib problems with multiple connections to Veekun's database, making multiple Pikaedit versions be used at the same time (Other Pikaedit versions need to be updated as well)

@@ -1,0 +1,6 @@
+PikaEdit XY 0.2.6.0
+https://dl.dropboxusercontent.com/s/nuhl8v39a4wj0tg/Pikaedit%20XY.exe?dl=1
+Added pkm to pkx conversion when loading a pkm file to Pikaedit XY
+Added individual Plugins can be updated manually and dlls will not be removed before calling the Plugin Updater
+Updated PikaeditLib with new postProcess to call the Plugin Updater and update the selected plugin when used
+Added not so useful menu button that shows the current status to send pkx data to XY games

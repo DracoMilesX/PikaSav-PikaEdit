@@ -1,0 +1,8 @@
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\bin\Embedded\Pikaedit Gen4.exe.config
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit Gen4.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit_Gen4.Form1.resources
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit_Gen4.Properties.Resources.resources
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit_Gen4.TrainerEditor.resources
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit Gen4.csproj.GenerateResource.Cache
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit Gen4.exe
+C:\Users\Brian\Desktop\PKHeX (04-04-15)\Sets\Pikaedit Source Code\Pikaedit Gen4\Pikaedit Gen4\obj\Embedded\Pikaedit Gen4.pdb
